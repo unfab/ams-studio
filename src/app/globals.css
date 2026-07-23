@@ -1,0 +1,80 @@
+@import "tailwindcss";
+
+:root {
+  --background: #FAF9F6;
+  --foreground: #08182d;
+  --navy: #08182d;
+  --accent: #2E6FF2;
+  --border-line: #E4E2DC;
+}
+
+@theme inline {
+  --color-ground: #FAF9F6;
+  --color-navy: #08182d;
+  --color-accent: #2E6FF2;
+  --color-border-line: #E4E2DC;
+  --font-sans: var(--font-geist-sans), system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), monospace;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+/* Custom Specular Button */
+.specular-button {
+  --sb-radius: 6px;
+  --sb-tint: #2E6FF2;
+  --sb-text-color: #ffffff;
+  --x: 50%;
+  --y: 50%;
+
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  font-family: inherit;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  line-height: 1;
+  color: var(--sb-text-color);
+  background-color: var(--sb-tint);
+  border-radius: var(--sb-radius);
+  cursor: pointer;
+  outline: none;
+  transition: transform 0.15s ease, background-color 0.2s ease;
+}
+
+.specular-button::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1.5px;
+  background: radial-gradient(circle at var(--x) var(--y), rgba(255,255,255,0.7) 0%, transparent 60%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.specular-button:hover::before {
+  opacity: 1;
+}
+
+.specular-button:hover {
+  background-color: #1c55c9;
+}
+
+.specular-button:active {
+  transform: scale(0.98);
+}
