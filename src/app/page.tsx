@@ -5,11 +5,67 @@ import { motion } from 'framer-motion';
 import { CardNav } from '@/components/CardNav';
 import { SpecularButton } from '@/components/SpecularButton';
 import { ProjectCalculator } from '@/components/ProjectCalculator';
-import { LogoFull } from '@/components/ui/LogoFull';
+import { TrembleShowcase } from '@/components/TrembleShowcase';
 import { LogoIcon } from '@/components/ui/LogoIcon';
-import { ArrowRight, CheckCircle2, ShieldCheck, Code2, Globe2, Layout, Database, Bot, Sparkles, Laptop, Smartphone } from 'lucide-react';
+import { ArrowRight, ArrowUpRight, CheckCircle2, ShieldCheck, Code2, Globe2, Sparkles, ExternalLink, Activity, Truck, Calculator, Utensils, Building2, Mountain } from 'lucide-react';
 
 export default function Home() {
+  const activeProjects = [
+    {
+      title: 'Portšped d.o.o.',
+      category: 'LOGISTICS & FREIGHT FORWARDING',
+      url: 'https://portsped.netlify.app/',
+      desc: 'International logistics, cargo transport management, and supply chain portal with 3D global shipping visualization.',
+      tags: ['NEXT.JS 14', 'THREE.JS 3D', 'TAILWIND CSS'],
+      status: 'IN DEVELOPMENT',
+      icon: Truck,
+    },
+    {
+      title: 'Lenova Računovodstvo',
+      category: 'FINANCIAL SERVICES & ACCOUNTING',
+      url: 'https://lenova-racunovodstvo.netlify.app/',
+      desc: 'Modern financial operations, tax advisory portal, and client document management platform for accounting firms.',
+      tags: ['NEXT.JS 14', 'INTERACTIVE CALCULATORS', 'FINANCIAL UX'],
+      status: 'IN DEVELOPMENT',
+      icon: Calculator,
+    },
+  ];
+
+  const conceptDemos = [
+    {
+      title: 'Gostišče Pri Naju',
+      category: 'CULINARY & GASTRONOMY',
+      url: 'https://pri-naju.netlify.app/',
+      desc: 'Boutique culinary experience, online menu showcase, and reservation flow for high-end dining.',
+      tags: ['GASTRONOMY', 'RESERVATIONS', 'LUXURY UX'],
+      icon: Utensils,
+    },
+    {
+      title: 'Gostilna Spark',
+      category: 'RESTAURANT & EVENTS',
+      url: 'https://gostilna-spark.netlify.app/',
+      desc: 'Traditional gastronomy & event catering showcase with modern digital menu system.',
+      tags: ['HOSPITALITY', 'EVENTS', 'DIGITAL MENU'],
+      icon: Utensils,
+    },
+    {
+      title: 'Formus d.o.o.',
+      category: 'CONSTRUCTION & ENGINEERING',
+      url: 'https://formus-doo.netlify.app/',
+      desc: 'Heavy industrial engineering, architectural metalworks, and construction portfolio platform.',
+      tags: ['INDUSTRIAL', 'ENGINEERING', 'PORTFOLIO'],
+      icon: Building2,
+    },
+    {
+      title: 'Gostišče Pod Slavnikom',
+      category: 'TOURISM & REGIONAL HOSPITALITY',
+      url: 'https://pod-slavnikom.netlify.app/',
+      desc: 'Regional tourism, local gastronomy, and countryside accommodation booking showcase.',
+      tags: ['TOURISM', 'ACCOMMODATION', 'LOCAL FOOD'],
+      icon: Mountain,
+    },
+  ];
+
   return (
     <main className="min-h-screen bg-[#FAF9F6] text-[#08182d] selection:bg-[#2E6FF2] selection:text-white relative">
       {/* Floating Card Navigation */}
@@ -59,7 +115,7 @@ export default function Home() {
             href="#products"
             className="inline-flex items-center justify-center px-7 py-3.5 text-base font-medium rounded-md border border-[#E4E2DC] text-[#08182d] hover:bg-black/5 transition-colors"
           >
-            Explore our products
+            Explore our products & builds
           </a>
         </motion.div>
       </section>
@@ -88,96 +144,165 @@ export default function Home() {
       <section id="products" className="py-28 px-6 md:px-12 max-w-6xl mx-auto">
         <div className="mb-14">
           <span className="font-mono text-xs uppercase tracking-widest text-[#08182d]/60 mb-3 block">
-            [01] IN-HOUSE PRODUCTS
+            [01] IN-HOUSE FLAGSHIP PRODUCT
           </span>
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[#08182d]">
             We build our own software too.
           </h2>
         </div>
 
-        <div className="bg-white border border-[#E4E2DC] rounded-xl overflow-hidden shadow-sm grid grid-cols-1 lg:grid-cols-12">
-          {/* Visual Architecture Area */}
-          <div className="lg:col-span-6 bg-[#FAF9F6] border-b lg:border-b-0 lg:border-r border-[#E4E2DC] p-8 md:p-12 flex flex-col justify-between min-h-[360px]">
-            <div className="flex items-center justify-between">
-              <span className="font-mono text-xs uppercase tracking-wider text-[#2E6FF2] font-semibold flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-[#2E6FF2] animate-pulse" />
-                ACTIVE DEVELOPMENT
+        {/* Dedicated Tremble Showcase */}
+        <TrembleShowcase />
+      </section>
+
+      {/* 4. WHAT WE ARE BUILDING (ACTIVE CLIENT BUILDS) */}
+      <section id="active-builds" className="py-24 px-6 md:px-12 border-t border-[#E4E2DC] bg-[#FAF9F6]">
+        <div className="max-w-6xl mx-auto">
+          <div className="mb-14 flex flex-col md:flex-row md:items-end justify-between gap-4">
+            <div>
+              <span className="font-mono text-xs uppercase tracking-widest text-[#08182d]/60 mb-3 block">
+                [02] ACTIVE CLIENT BUILDS
               </span>
-              <span className="font-mono text-xs text-[#08182d]/50">v1.0-alpha</span>
+              <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[#08182d]">
+                What we are building.
+              </h2>
             </div>
-
-            {/* Architecture Card UI */}
-            <div className="bg-white border border-[#E4E2DC] rounded-lg p-6 my-6 shadow-sm">
-              <div className="flex items-center gap-3 mb-4">
-                <LogoIcon className="w-6 h-6 text-[#08182d]" />
-                <span className="font-bold text-sm text-[#08182d]">Tremble Architecture</span>
-              </div>
-              <div className="space-y-2.5 font-mono text-xs text-[#08182d]/70">
-                <div className="p-2 bg-[#FAF9F6] border border-[#E4E2DC] rounded flex justify-between">
-                  <span>DISCOVERY:</span>
-                  <span className="text-[#2E6FF2]">Proximity Geohash</span>
-                </div>
-                <div className="p-2 bg-[#FAF9F6] border border-[#E4E2DC] rounded flex justify-between">
-                  <span>COMPUTE:</span>
-                  <span className="text-[#2E6FF2]">RAM Ephemeral Processing</span>
-                </div>
-                <div className="p-2 bg-[#FAF9F6] border border-[#E4E2DC] rounded flex justify-between">
-                  <span>PRIVACY:</span>
-                  <span className="text-[#2E6FF2]">Zero Location Storage</span>
-                </div>
-              </div>
-            </div>
-
-            <p className="font-mono text-xs text-[#08182d]/60">
-              Architecture engineered for zero persistent tracking logs.
+            <p className="font-mono text-xs text-[#2E6FF2] flex items-center gap-2">
+              <Activity className="w-4 h-4 animate-pulse" />
+              STAGING & DEVELOPMENT IN PROGRESS
             </p>
           </div>
 
-          {/* Text Info */}
-          <div className="lg:col-span-6 p-8 md:p-12 flex flex-col justify-between">
-            <div>
-              <div className="inline-flex items-center px-3 py-1 bg-[#FAF9F6] border border-[#E4E2DC] rounded text-xs font-mono text-[#08182d] mb-6">
-                Tremble Engine
-              </div>
-              <h3 className="text-2xl md:text-3xl font-bold text-[#08182d] mb-4">
-                Proximity Discovery Engine
-              </h3>
-              <p className="text-[#08182d]/80 leading-relaxed mb-6">
-                Tremble is our proprietary proximity-discovery platform built for mobile and web. It solves real-time localized discovery without storing continuous GPS telemetry or harvesting sensitive personal location history.
-              </p>
-              <ul className="space-y-2 mb-8 font-medium text-sm text-[#08182d]/90">
-                <li className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-[#2E6FF2]" />
-                  <span>Sub-second match resolution</span>
-                </li>
-                <li className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-[#2E6FF2]" />
-                  <span>Privacy-first architecture by default</span>
-                </li>
-                <li className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-[#2E6FF2]" />
-                  <span>Cross-platform iOS & Android compatibility</span>
-                </li>
-              </ul>
-            </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {activeProjects.map((project, idx) => {
+              const IconComponent = project.icon;
+              return (
+                <div
+                  key={idx}
+                  className="bg-white border border-[#E4E2DC] rounded-xl p-8 shadow-sm flex flex-col justify-between hover:border-[#2E6FF2]/50 transition-colors group"
+                >
+                  <div>
+                    <div className="flex items-center justify-between mb-6">
+                      <div className="flex items-center gap-2.5">
+                        <div className="w-8 h-8 rounded bg-[#FAF9F6] border border-[#E4E2DC] flex items-center justify-center text-[#08182d]">
+                          <IconComponent className="w-4 h-4 text-[#2E6FF2]" />
+                        </div>
+                        <span className="font-mono text-xs uppercase text-[#08182d]/60 font-medium">
+                          {project.category}
+                        </span>
+                      </div>
+                      <span className="font-mono text-[10px] uppercase bg-[#2E6FF2]/10 border border-[#2E6FF2]/20 px-2 py-0.5 rounded text-[#2E6FF2] font-semibold flex items-center gap-1.5">
+                        <span className="w-1.5 h-1.5 rounded-full bg-[#2E6FF2] animate-pulse" />
+                        {project.status}
+                      </span>
+                    </div>
 
-            <a
-              href="#calculator"
-              className="text-[#2E6FF2] font-semibold text-sm inline-flex items-center gap-1 hover:underline group"
-            >
-              <span>Inquire about licensing or tech partnership</span>
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </a>
+                    <h3 className="text-2xl font-bold text-[#08182d] mb-3 group-hover:text-[#2E6FF2] transition-colors">
+                      {project.title}
+                    </h3>
+                    <p className="text-sm text-[#08182d]/80 leading-relaxed mb-6">
+                      {project.desc}
+                    </p>
+
+                    <div className="flex flex-wrap gap-1.5 mb-8">
+                      {project.tags.map((tag, i) => (
+                        <span
+                          key={i}
+                          className="font-mono text-[10px] bg-[#FAF9F6] border border-[#E4E2DC] px-2 py-0.5 rounded text-[#08182d]/70"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+
+                  <a
+                    href={project.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="pt-4 border-t border-[#E4E2DC] text-[#2E6FF2] font-semibold text-xs inline-flex items-center justify-between group-hover:underline"
+                  >
+                    <span>View Staging Demo Preview</span>
+                    <ExternalLink className="w-3.5 h-3.5" />
+                  </a>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
 
-      {/* 4. SERVICES SECTION (WITH TECHNICAL BADGES) */}
+      {/* 5. CONCEPT BUILDS & CAPABILITY DEMOS */}
+      <section id="concept-demos" className="py-28 px-6 md:px-12 max-w-6xl mx-auto">
+        <div className="mb-14">
+          <span className="font-mono text-xs uppercase tracking-widest text-[#08182d]/60 mb-3 block">
+            [03] DEMOS & CAPABILITIES
+          </span>
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[#08182d] mb-3">
+            What we can build for you.
+          </h2>
+          <p className="text-base text-[#08182d]/70 max-w-2xl">
+            Live interactive demos showcasing our design aesthetic, component architecture, and industry capabilities.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {conceptDemos.map((demo, idx) => {
+            const IconComponent = demo.icon;
+            return (
+              <div
+                key={idx}
+                className="bg-white border border-[#E4E2DC] rounded-xl p-6 shadow-sm hover:border-[#2E6FF2]/50 transition-all group flex flex-col justify-between"
+              >
+                <div>
+                  <div className="flex items-center justify-between mb-4">
+                    <span className="font-mono text-xs uppercase bg-[#FAF9F6] border border-[#E4E2DC] px-2.5 py-1 rounded text-[#08182d]/60 flex items-center gap-2">
+                      <IconComponent className="w-3.5 h-3.5 text-[#2E6FF2]" />
+                      {demo.category}
+                    </span>
+                    <span className="font-mono text-xs text-[#08182d]/40">LIVE DEMO</span>
+                  </div>
+
+                  <h4 className="font-bold text-xl text-[#08182d] mb-2 group-hover:text-[#2E6FF2] transition-colors">
+                    {demo.title}
+                  </h4>
+                  <p className="text-sm text-[#08182d]/75 leading-relaxed mb-6">
+                    {demo.desc}
+                  </p>
+
+                  <div className="flex flex-wrap gap-1.5 mb-6">
+                    {demo.tags.map((t, i) => (
+                      <span
+                        key={i}
+                        className="font-mono text-[10px] bg-[#FAF9F6] border border-[#E4E2DC] px-2 py-0.5 rounded text-[#08182d]/70"
+                      >
+                        {t}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                <a
+                  href={demo.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="pt-4 border-t border-[#E4E2DC] text-[#08182d] hover:text-[#2E6FF2] font-semibold text-xs inline-flex items-center justify-between transition-colors"
+                >
+                  <span>Launch Demo Site</span>
+                  <ArrowUpRight className="w-4 h-4 text-[#2E6FF2]" />
+                </a>
+              </div>
+            );
+          })}
+        </div>
+      </section>
+
+      {/* 6. SERVICES SECTION */}
       <section id="services" className="py-28 px-6 md:px-12 border-t border-[#E4E2DC] bg-[#FAF9F6]">
         <div className="max-w-6xl mx-auto">
           <div className="mb-14">
             <span className="font-mono text-xs uppercase tracking-widest text-[#08182d]/60 mb-3 block">
-              [02] SERVICES
+              [04] SERVICES
             </span>
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[#08182d]">
               What we do.
@@ -251,86 +376,12 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 5. CONCEPT BUILDS & PROJECT CARDS */}
-      <section id="concept-builds" className="py-28 px-6 md:px-12 max-w-6xl mx-auto">
-        <div className="mb-14">
-          <span className="font-mono text-xs uppercase tracking-widest text-[#08182d]/60 mb-3 block">
-            [03] CONCEPT BUILDS & PORTFOLIO
-          </span>
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[#08182d] mb-3">
-            Self-initiated work.
-          </h2>
-          <p className="text-base text-[#08182d]/70 max-w-2xl">
-            Internal experiments and concept builds we created to refine our tech stack, test user interfaces, and showcase capabilities.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {/* Concept Card 1 */}
-          <div className="bg-white border border-[#E4E2DC] rounded-xl p-6 shadow-sm hover:border-[#2E6FF2]/50 transition-colors group">
-            <div className="bg-[#FAF9F6] border border-[#E4E2DC] rounded-lg p-6 mb-5 aspect-[16/10] flex items-center justify-center relative overflow-hidden">
-              <div className="w-full h-full bg-white border border-[#E4E2DC] rounded p-4 font-mono text-xs space-y-3 shadow-sm">
-                <div className="flex justify-between items-center pb-2 border-b border-[#E4E2DC]">
-                  <div className="flex gap-1.5">
-                    <span className="w-2 h-2 rounded-full bg-[#E4E2DC]" />
-                    <span className="w-2 h-2 rounded-full bg-[#E4E2DC]" />
-                    <span className="w-2 h-2 rounded-full bg-[#E4E2DC]" />
-                  </div>
-                  <span className="text-[10px] text-[#08182d]/40">workspace.ams</span>
-                </div>
-                <div className="h-4 bg-[#FAF9F6] border border-[#E4E2DC] rounded w-1/3" />
-                <div className="h-16 bg-[#FAF9F6] border border-[#E4E2DC] rounded w-full flex items-center justify-center text-[#2E6FF2] font-semibold">
-                  METRICS & WORKFLOW ENGINE
-                </div>
-              </div>
-            </div>
-            <div className="flex items-center justify-between mb-2">
-              <span className="font-mono text-xs uppercase bg-[#FAF9F6] border border-[#E4E2DC] px-2 py-0.5 rounded text-[#08182d]/60">
-                SAAS DASHBOARD
-              </span>
-              <span className="font-mono text-xs text-[#08182d]/50">Concept — 2026</span>
-            </div>
-            <h4 className="font-bold text-lg text-[#08182d] group-hover:text-[#2E6FF2] transition-colors">
-              Analytical Workspace & Metrics UI
-            </h4>
-          </div>
-
-          {/* Concept Card 2 */}
-          <div className="bg-white border border-[#E4E2DC] rounded-xl p-6 shadow-sm hover:border-[#2E6FF2]/50 transition-colors group">
-            <div className="bg-[#FAF9F6] border border-[#E4E2DC] rounded-lg p-6 mb-5 aspect-[16/10] flex items-center justify-center relative overflow-hidden">
-              <div className="w-full h-full bg-white border border-[#E4E2DC] rounded p-4 font-mono text-xs space-y-3 shadow-sm">
-                <div className="flex justify-between items-center pb-2 border-b border-[#E4E2DC]">
-                  <div className="flex gap-1.5">
-                    <span className="w-2 h-2 rounded-full bg-[#E4E2DC]" />
-                    <span className="w-2 h-2 rounded-full bg-[#E4E2DC]" />
-                  </div>
-                  <span className="text-[10px] text-[#08182d]/40">automation.n8n</span>
-                </div>
-                <div className="h-4 bg-[#FAF9F6] border border-[#E4E2DC] rounded w-1/2" />
-                <div className="h-16 bg-[#2E6FF2]/10 border border-[#2E6FF2]/20 rounded w-full flex items-center justify-center text-[#2E6FF2] font-semibold">
-                  AUTOMATED LEAD PIPELINE
-                </div>
-              </div>
-            </div>
-            <div className="flex items-center justify-between mb-2">
-              <span className="font-mono text-xs uppercase bg-[#FAF9F6] border border-[#E4E2DC] px-2 py-0.5 rounded text-[#08182d]/60">
-                AUTOMATION
-              </span>
-              <span className="font-mono text-xs text-[#08182d]/50">Concept — 2026</span>
-            </div>
-            <h4 className="font-bold text-lg text-[#08182d] group-hover:text-[#2E6FF2] transition-colors">
-              Internal Lead Processing Pipeline
-            </h4>
-          </div>
-        </div>
-      </section>
-
-      {/* 6. HOW WE WORK (PROCESS + GUARANTEE) */}
+      {/* 7. HOW WE WORK (PROCESS + GUARANTEE) */}
       <section id="process" className="py-28 px-6 md:px-12 border-t border-[#E4E2DC] bg-[#FAF9F6]">
         <div className="max-w-6xl mx-auto">
           <div className="mb-16">
             <span className="font-mono text-xs uppercase tracking-widest text-[#08182d]/60 mb-3 block">
-              [04] HOW WE WORK
+              [05] HOW WE WORK
             </span>
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[#08182d]">
               Direct engineering. Clear milestones.
@@ -372,11 +423,11 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 7. INTERACTIVE PROJECT CALCULATOR / SCOPE BUILDER SECTION */}
+      {/* 8. INTERACTIVE PROJECT CALCULATOR / SCOPE BUILDER SECTION */}
       <section id="calculator" className="py-28 px-6 md:px-12 max-w-4xl mx-auto">
         <div className="text-center mb-12">
           <span className="font-mono text-xs uppercase tracking-widest text-[#08182d]/60 mb-3 block">
-            [05] INTERACTIVE PROJECT CALCULATOR
+            [06] INTERACTIVE PROJECT CALCULATOR
           </span>
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[#08182d] mb-4">
             Build your project scope in 60 seconds.
@@ -390,7 +441,7 @@ export default function Home() {
         <ProjectCalculator />
       </section>
 
-      {/* 8. FOOTER */}
+      {/* 9. FOOTER */}
       <footer className="border-t border-[#E4E2DC] bg-[#FAF9F6] py-14 px-6 md:px-12">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
           <div className="flex items-center gap-3">
