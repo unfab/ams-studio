@@ -37,7 +37,7 @@ export const TrembleShowcase: React.FC = () => {
           {/* Actual Tremble Website Screenshot */}
           <div className="relative aspect-[16/10] overflow-hidden">
             <Image
-              src="/tremble-screenshot.png"
+              src="/tremble-hero-screenshot.png"
               alt="Tremble Website Screenshot"
               width={1280}
               height={800}
