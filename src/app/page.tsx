@@ -1,13 +1,14 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { CardNav } from '@/components/CardNav';
 import { SpecularButton } from '@/components/SpecularButton';
 import { ProjectCalculator } from '@/components/ProjectCalculator';
 import { TrembleShowcase } from '@/components/TrembleShowcase';
 import { LogoIcon } from '@/components/ui/LogoIcon';
-import { ArrowRight, ArrowUpRight, CheckCircle2, ShieldCheck, Code2, Globe2, Sparkles, ExternalLink, Activity, Truck, Calculator, Utensils, Building2, Mountain } from 'lucide-react';
+import { ArrowRight, ArrowUpRight, ShieldCheck, Code2, Globe2, Sparkles, ExternalLink, Activity, Truck, Calculator, Utensils, Building2, Mountain } from 'lucide-react';
 
 export default function Home() {
   const activeProjects = [
@@ -15,6 +16,7 @@ export default function Home() {
       title: 'Portšped d.o.o.',
       category: 'LOGISTICS & FREIGHT FORWARDING',
       url: 'https://portsped.netlify.app/',
+      image: '/portsped-screenshot.png',
       desc: 'International logistics, cargo transport management, and supply chain portal with 3D global shipping visualization.',
       tags: ['NEXT.JS 14', 'THREE.JS 3D', 'TAILWIND CSS'],
       status: 'IN DEVELOPMENT',
@@ -24,6 +26,7 @@ export default function Home() {
       title: 'Lenova Računovodstvo',
       category: 'FINANCIAL SERVICES & ACCOUNTING',
       url: 'https://lenova-racunovodstvo.netlify.app/',
+      image: '/lenova-screenshot.png',
       desc: 'Modern financial operations, tax advisory portal, and client document management platform for accounting firms.',
       tags: ['NEXT.JS 14', 'INTERACTIVE CALCULATORS', 'FINANCIAL UX'],
       status: 'IN DEVELOPMENT',
@@ -36,6 +39,7 @@ export default function Home() {
       title: 'Gostišče Pri Naju',
       category: 'CULINARY & GASTRONOMY',
       url: 'https://pri-naju.netlify.app/',
+      image: '/prinaju-screenshot.png',
       desc: 'Boutique culinary experience, online menu showcase, and reservation flow for high-end dining.',
       tags: ['GASTRONOMY', 'RESERVATIONS', 'LUXURY UX'],
       icon: Utensils,
@@ -44,6 +48,7 @@ export default function Home() {
       title: 'Gostilna Spark',
       category: 'RESTAURANT & EVENTS',
       url: 'https://gostilna-spark.netlify.app/',
+      image: '/spark-screenshot.png',
       desc: 'Traditional gastronomy & event catering showcase with modern digital menu system.',
       tags: ['HOSPITALITY', 'EVENTS', 'DIGITAL MENU'],
       icon: Utensils,
@@ -52,6 +57,7 @@ export default function Home() {
       title: 'Formus d.o.o.',
       category: 'CONSTRUCTION & ENGINEERING',
       url: 'https://formus-doo.netlify.app/',
+      image: '/formus-screenshot.png',
       desc: 'Heavy industrial engineering, architectural metalworks, and construction portfolio platform.',
       tags: ['INDUSTRIAL', 'ENGINEERING', 'PORTFOLIO'],
       icon: Building2,
@@ -60,6 +66,7 @@ export default function Home() {
       title: 'Gostišče Pod Slavnikom',
       category: 'TOURISM & REGIONAL HOSPITALITY',
       url: 'https://pod-slavnikom.netlify.app/',
+      image: '/slavnik-screenshot.png',
       desc: 'Regional tourism, local gastronomy, and countryside accommodation booking showcase.',
       tags: ['TOURISM', 'ACCOMMODATION', 'LOCAL FOOD'],
       icon: Mountain,
@@ -179,52 +186,76 @@ export default function Home() {
               return (
                 <div
                   key={idx}
-                  className="bg-white border border-[#E4E2DC] rounded-xl p-8 shadow-sm flex flex-col justify-between hover:border-[#2E6FF2]/50 transition-colors group"
+                  className="bg-white border border-[#E4E2DC] rounded-xl overflow-hidden shadow-sm flex flex-col justify-between hover:border-[#2E6FF2]/50 transition-colors group"
                 >
-                  <div>
-                    <div className="flex items-center justify-between mb-6">
-                      <div className="flex items-center gap-2.5">
-                        <div className="w-8 h-8 rounded bg-[#FAF9F6] border border-[#E4E2DC] flex items-center justify-center text-[#08182d]">
-                          <IconComponent className="w-4 h-4 text-[#2E6FF2]" />
-                        </div>
-                        <span className="font-mono text-xs uppercase text-[#08182d]/60 font-medium">
-                          {project.category}
-                        </span>
+                  {/* Real Screenshot Preview Frame */}
+                  <div className="bg-[#08182d] p-4 border-b border-[#E4E2DC] relative">
+                    <div className="h-6 bg-[#0c223f] border border-white/10 rounded-t px-2.5 flex items-center justify-between">
+                      <div className="flex items-center gap-1">
+                        <span className="w-2 h-2 rounded-full bg-red-500/80 inline-block" />
+                        <span className="w-2 h-2 rounded-full bg-yellow-500/80 inline-block" />
+                        <span className="w-2 h-2 rounded-full bg-green-500/80 inline-block" />
                       </div>
-                      <span className="font-mono text-[10px] uppercase bg-[#2E6FF2]/10 border border-[#2E6FF2]/20 px-2 py-0.5 rounded text-[#2E6FF2] font-semibold flex items-center gap-1.5">
-                        <span className="w-1.5 h-1.5 rounded-full bg-[#2E6FF2] animate-pulse" />
-                        {project.status}
-                      </span>
+                      <span className="font-mono text-[9px] text-white/50">{project.url.replace('https://', '')}</span>
+                      <span className="w-3" />
                     </div>
-
-                    <h3 className="text-2xl font-bold text-[#08182d] mb-3 group-hover:text-[#2E6FF2] transition-colors">
-                      {project.title}
-                    </h3>
-                    <p className="text-sm text-[#08182d]/80 leading-relaxed mb-6">
-                      {project.desc}
-                    </p>
-
-                    <div className="flex flex-wrap gap-1.5 mb-8">
-                      {project.tags.map((tag, i) => (
-                        <span
-                          key={i}
-                          className="font-mono text-[10px] bg-[#FAF9F6] border border-[#E4E2DC] px-2 py-0.5 rounded text-[#08182d]/70"
-                        >
-                          {tag}
-                        </span>
-                      ))}
+                    <div className="relative aspect-[16/10] overflow-hidden rounded-b border-x border-b border-white/10">
+                      <Image
+                        src={project.image}
+                        alt={project.title}
+                        width={1280}
+                        height={800}
+                        className="object-cover object-top w-full h-full group-hover:scale-105 transition-transform duration-500"
+                      />
                     </div>
                   </div>
 
-                  <a
-                    href={project.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="pt-4 border-t border-[#E4E2DC] text-[#2E6FF2] font-semibold text-xs inline-flex items-center justify-between group-hover:underline"
-                  >
-                    <span>View Staging Demo Preview</span>
-                    <ExternalLink className="w-3.5 h-3.5" />
-                  </a>
+                  <div className="p-6 md:p-8 flex-1 flex flex-col justify-between">
+                    <div>
+                      <div className="flex items-center justify-between mb-4">
+                        <div className="flex items-center gap-2">
+                          <div className="w-7 h-7 rounded bg-[#FAF9F6] border border-[#E4E2DC] flex items-center justify-center text-[#08182d]">
+                            <IconComponent className="w-3.5 h-3.5 text-[#2E6FF2]" />
+                          </div>
+                          <span className="font-mono text-[10px] uppercase text-[#08182d]/60 font-medium">
+                            {project.category}
+                          </span>
+                        </div>
+                        <span className="font-mono text-[10px] uppercase bg-[#2E6FF2]/10 border border-[#2E6FF2]/20 px-2 py-0.5 rounded text-[#2E6FF2] font-semibold flex items-center gap-1">
+                          <span className="w-1.5 h-1.5 rounded-full bg-[#2E6FF2] animate-pulse" />
+                          {project.status}
+                        </span>
+                      </div>
+
+                      <h3 className="text-xl font-bold text-[#08182d] mb-2 group-hover:text-[#2E6FF2] transition-colors">
+                        {project.title}
+                      </h3>
+                      <p className="text-sm text-[#08182d]/80 leading-relaxed mb-6">
+                        {project.desc}
+                      </p>
+
+                      <div className="flex flex-wrap gap-1.5 mb-6">
+                        {project.tags.map((tag, i) => (
+                          <span
+                            key={i}
+                            className="font-mono text-[10px] bg-[#FAF9F6] border border-[#E4E2DC] px-2 py-0.5 rounded text-[#08182d]/70"
+                          >
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+
+                    <a
+                      href={project.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="pt-4 border-t border-[#E4E2DC] text-[#2E6FF2] font-semibold text-xs inline-flex items-center justify-between group-hover:underline"
+                    >
+                      <span>View Live Staging Site</span>
+                      <ExternalLink className="w-3.5 h-3.5" />
+                    </a>
+                  </div>
                 </div>
               );
             })}
@@ -252,45 +283,69 @@ export default function Home() {
             return (
               <div
                 key={idx}
-                className="bg-white border border-[#E4E2DC] rounded-xl p-6 shadow-sm hover:border-[#2E6FF2]/50 transition-all group flex flex-col justify-between"
+                className="bg-white border border-[#E4E2DC] rounded-xl overflow-hidden shadow-sm hover:border-[#2E6FF2]/50 transition-all group flex flex-col justify-between"
               >
-                <div>
-                  <div className="flex items-center justify-between mb-4">
-                    <span className="font-mono text-xs uppercase bg-[#FAF9F6] border border-[#E4E2DC] px-2.5 py-1 rounded text-[#08182d]/60 flex items-center gap-2">
-                      <IconComponent className="w-3.5 h-3.5 text-[#2E6FF2]" />
-                      {demo.category}
-                    </span>
-                    <span className="font-mono text-xs text-[#08182d]/40">LIVE DEMO</span>
+                {/* Real Screenshot Preview Frame */}
+                <div className="bg-[#08182d] p-3 border-b border-[#E4E2DC] relative">
+                  <div className="h-5 bg-[#0c223f] border border-white/10 rounded-t px-2 flex items-center justify-between">
+                    <div className="flex items-center gap-1">
+                      <span className="w-1.5 h-1.5 rounded-full bg-red-500/80 inline-block" />
+                      <span className="w-1.5 h-1.5 rounded-full bg-yellow-500/80 inline-block" />
+                      <span className="w-1.5 h-1.5 rounded-full bg-green-500/80 inline-block" />
+                    </div>
+                    <span className="font-mono text-[8px] text-white/50">{demo.url.replace('https://', '')}</span>
+                    <span className="w-2" />
                   </div>
-
-                  <h4 className="font-bold text-xl text-[#08182d] mb-2 group-hover:text-[#2E6FF2] transition-colors">
-                    {demo.title}
-                  </h4>
-                  <p className="text-sm text-[#08182d]/75 leading-relaxed mb-6">
-                    {demo.desc}
-                  </p>
-
-                  <div className="flex flex-wrap gap-1.5 mb-6">
-                    {demo.tags.map((t, i) => (
-                      <span
-                        key={i}
-                        className="font-mono text-[10px] bg-[#FAF9F6] border border-[#E4E2DC] px-2 py-0.5 rounded text-[#08182d]/70"
-                      >
-                        {t}
-                      </span>
-                    ))}
+                  <div className="relative aspect-[16/10] overflow-hidden rounded-b border-x border-b border-white/10">
+                    <Image
+                      src={demo.image}
+                      alt={demo.title}
+                      width={1280}
+                      height={800}
+                      className="object-cover object-top w-full h-full group-hover:scale-105 transition-transform duration-500"
+                    />
                   </div>
                 </div>
 
-                <a
-                  href={demo.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="pt-4 border-t border-[#E4E2DC] text-[#08182d] hover:text-[#2E6FF2] font-semibold text-xs inline-flex items-center justify-between transition-colors"
-                >
-                  <span>Launch Demo Site</span>
-                  <ArrowUpRight className="w-4 h-4 text-[#2E6FF2]" />
-                </a>
+                <div className="p-6 flex-1 flex flex-col justify-between">
+                  <div>
+                    <div className="flex items-center justify-between mb-3">
+                      <span className="font-mono text-[10px] uppercase bg-[#FAF9F6] border border-[#E4E2DC] px-2 py-0.5 rounded text-[#08182d]/60 flex items-center gap-1.5">
+                        <IconComponent className="w-3 h-3 text-[#2E6FF2]" />
+                        {demo.category}
+                      </span>
+                      <span className="font-mono text-[10px] text-[#08182d]/40">INTERACTIVE DEMO</span>
+                    </div>
+
+                    <h4 className="font-bold text-lg text-[#08182d] mb-2 group-hover:text-[#2E6FF2] transition-colors">
+                      {demo.title}
+                    </h4>
+                    <p className="text-xs text-[#08182d]/75 leading-relaxed mb-4">
+                      {demo.desc}
+                    </p>
+
+                    <div className="flex flex-wrap gap-1 mb-4">
+                      {demo.tags.map((t, i) => (
+                        <span
+                          key={i}
+                          className="font-mono text-[9px] bg-[#FAF9F6] border border-[#E4E2DC] px-1.5 py-0.5 rounded text-[#08182d]/70"
+                        >
+                          {t}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+
+                  <a
+                    href={demo.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="pt-3 border-t border-[#E4E2DC] text-[#08182d] hover:text-[#2E6FF2] font-semibold text-xs inline-flex items-center justify-between transition-colors"
+                  >
+                    <span>Launch Live Demo Site</span>
+                    <ArrowUpRight className="w-3.5 h-3.5 text-[#2E6FF2]" />
+                  </a>
+                </div>
               </div>
             );
           })}
