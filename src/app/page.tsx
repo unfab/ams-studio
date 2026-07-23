@@ -4,9 +4,10 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { CardNav } from '@/components/CardNav';
 import { SpecularButton } from '@/components/SpecularButton';
+import { ProjectCalculator } from '@/components/ProjectCalculator';
 import { LogoFull } from '@/components/ui/LogoFull';
 import { LogoIcon } from '@/components/ui/LogoIcon';
-import { ArrowRight, ArrowUpRight, CheckCircle2, ShieldCheck, Code2, Globe2 } from 'lucide-react';
+import { ArrowRight, CheckCircle2, ShieldCheck, Code2, Globe2, Layout, Database, Bot, Sparkles, Laptop, Smartphone } from 'lucide-react';
 
 export default function Home() {
   return (
@@ -51,8 +52,8 @@ export default function Home() {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="flex flex-col sm:flex-row gap-4 items-stretch sm:items-center"
         >
-          <SpecularButton size="lg" onClick={() => (window.location.href = '#contact')}>
-            Start a project
+          <SpecularButton size="lg" onClick={() => (window.location.href = '#calculator')}>
+            Build Project Scope <Sparkles className="w-4 h-4 ml-2 inline" />
           </SpecularButton>
           <a
             href="#products"
@@ -161,7 +162,7 @@ export default function Home() {
             </div>
 
             <a
-              href="#contact"
+              href="#calculator"
               className="text-[#2E6FF2] font-semibold text-sm inline-flex items-center gap-1 hover:underline group"
             >
               <span>Inquire about licensing or tech partnership</span>
@@ -171,7 +172,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 4. SERVICES SECTION */}
+      {/* 4. SERVICES SECTION (WITH TECHNICAL BADGES) */}
       <section id="services" className="py-28 px-6 md:px-12 border-t border-[#E4E2DC] bg-[#FAF9F6]">
         <div className="max-w-6xl mx-auto">
           <div className="mb-14">
@@ -186,45 +187,75 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="bg-white border border-[#E4E2DC] rounded-xl p-8 flex flex-col justify-between shadow-sm">
               <div>
-                <span className="font-mono text-xs text-[#08182d]/40 block mb-6">[01]</span>
+                <div className="flex items-center justify-between mb-6">
+                  <span className="font-mono text-xs text-[#08182d]/40">[01]</span>
+                  <span className="font-mono text-[10px] uppercase bg-[#FAF9F6] border border-[#E4E2DC] px-2 py-0.5 rounded text-[#2E6FF2]">
+                    CUSTOM BUILD
+                  </span>
+                </div>
                 <h3 className="text-xl font-bold text-[#08182d] mb-3">Software Engineering</h3>
                 <p className="text-sm text-[#08182d]/80 leading-relaxed mb-6">
-                  Custom web applications, specialized SaaS builds, internal business tools, complex n8n style workflow automation, and custom API integrations.
+                  Custom web applications, specialized SaaS platforms, internal business tools, complex n8n style workflow automation, and custom API integrations.
                 </p>
               </div>
-              <span className="font-mono text-xs text-[#2E6FF2]">Next.js · Node · Cloud</span>
+
+              <div className="flex flex-wrap gap-1.5 pt-4 border-t border-[#E4E2DC]">
+                <span className="font-mono text-[10px] bg-[#FAF9F6] border border-[#E4E2DC] px-2 py-0.5 rounded text-[#08182d]/70">NEXT.JS 14</span>
+                <span className="font-mono text-[10px] bg-[#FAF9F6] border border-[#E4E2DC] px-2 py-0.5 rounded text-[#08182d]/70">NODE / PYTHON</span>
+                <span className="font-mono text-[10px] bg-[#FAF9F6] border border-[#E4E2DC] px-2 py-0.5 rounded text-[#08182d]/70">N8N WORKFLOWS</span>
+              </div>
             </div>
 
             <div className="bg-white border border-[#E4E2DC] rounded-xl p-8 flex flex-col justify-between shadow-sm">
               <div>
-                <span className="font-mono text-xs text-[#08182d]/40 block mb-6">[02]</span>
+                <div className="flex items-center justify-between mb-6">
+                  <span className="font-mono text-xs text-[#08182d]/40">[02]</span>
+                  <span className="font-mono text-[10px] uppercase bg-[#FAF9F6] border border-[#E4E2DC] px-2 py-0.5 rounded text-[#2E6FF2]">
+                    STOREFRONTS
+                  </span>
+                </div>
                 <h3 className="text-xl font-bold text-[#08182d] mb-3">Web & Shopify</h3>
                 <p className="text-sm text-[#08182d]/80 leading-relaxed mb-6">
-                  High-converting corporate marketing websites, custom Shopify storefronts, component design systems, and rigorous UI/UX performance optimization.
+                  High-converting corporate marketing websites, custom Shopify implementations, component design systems, and rigorous UI/UX performance optimization.
                 </p>
               </div>
-              <span className="font-mono text-xs text-[#2E6FF2]">Shopify · Tailwind · UX</span>
+
+              <div className="flex flex-wrap gap-1.5 pt-4 border-t border-[#E4E2DC]">
+                <span className="font-mono text-[10px] bg-[#FAF9F6] border border-[#E4E2DC] px-2 py-0.5 rounded text-[#08182d]/70">SHOPIFY HYDROGEN</span>
+                <span className="font-mono text-[10px] bg-[#FAF9F6] border border-[#E4E2DC] px-2 py-0.5 rounded text-[#08182d]/70">TAILWIND CSS</span>
+                <span className="font-mono text-[10px] bg-[#FAF9F6] border border-[#E4E2DC] px-2 py-0.5 rounded text-[#08182d]/70">DESIGN SYSTEMS</span>
+              </div>
             </div>
 
             <div className="bg-white border border-[#E4E2DC] rounded-xl p-8 flex flex-col justify-between shadow-sm">
               <div>
-                <span className="font-mono text-xs text-[#08182d]/40 block mb-6">[03]</span>
+                <div className="flex items-center justify-between mb-6">
+                  <span className="font-mono text-xs text-[#08182d]/40">[03]</span>
+                  <span className="font-mono text-[10px] uppercase bg-[#FAF9F6] border border-[#E4E2DC] px-2 py-0.5 rounded text-[#2E6FF2]">
+                    SLA & SUPPORT
+                  </span>
+                </div>
                 <h3 className="text-xl font-bold text-[#08182d] mb-3">Ongoing Partnership</h3>
                 <p className="text-sm text-[#08182d]/80 leading-relaxed mb-6">
                   Dedicated maintenance SLAs, security updates, continuous feature development, and infrastructure monitoring for active digital products.
                 </p>
               </div>
-              <span className="font-mono text-xs text-[#2E6FF2]">Support · Monitoring · QA</span>
+
+              <div className="flex flex-wrap gap-1.5 pt-4 border-t border-[#E4E2DC]">
+                <span className="font-mono text-[10px] bg-[#FAF9F6] border border-[#E4E2DC] px-2 py-0.5 rounded text-[#08182d]/70">SLA GUARANTEE</span>
+                <span className="font-mono text-[10px] bg-[#FAF9F6] border border-[#E4E2DC] px-2 py-0.5 rounded text-[#08182d]/70">24/7 MONITORING</span>
+                <span className="font-mono text-[10px] bg-[#FAF9F6] border border-[#E4E2DC] px-2 py-0.5 rounded text-[#08182d]/70">FEATURE SPRINTS</span>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* 5. CONCEPT BUILDS */}
+      {/* 5. CONCEPT BUILDS & PROJECT CARDS */}
       <section id="concept-builds" className="py-28 px-6 md:px-12 max-w-6xl mx-auto">
         <div className="mb-14">
           <span className="font-mono text-xs uppercase tracking-widest text-[#08182d]/60 mb-3 block">
-            [03] CONCEPT BUILDS
+            [03] CONCEPT BUILDS & PORTFOLIO
           </span>
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[#08182d] mb-3">
             Self-initiated work.
@@ -235,26 +266,61 @@ export default function Home() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div className="bg-white border border-[#E4E2DC] rounded-xl p-6 shadow-sm hover:border-[#2E6FF2]/50 transition-colors">
-            <div className="bg-[#FAF9F6] border border-[#E4E2DC] rounded-lg p-6 mb-5 aspect-[16/10] flex items-center justify-center">
-              <div className="w-full h-full bg-white border border-[#E4E2DC] rounded p-4 font-mono text-xs space-y-2">
+          {/* Concept Card 1 */}
+          <div className="bg-white border border-[#E4E2DC] rounded-xl p-6 shadow-sm hover:border-[#2E6FF2]/50 transition-colors group">
+            <div className="bg-[#FAF9F6] border border-[#E4E2DC] rounded-lg p-6 mb-5 aspect-[16/10] flex items-center justify-center relative overflow-hidden">
+              <div className="w-full h-full bg-white border border-[#E4E2DC] rounded p-4 font-mono text-xs space-y-3 shadow-sm">
+                <div className="flex justify-between items-center pb-2 border-b border-[#E4E2DC]">
+                  <div className="flex gap-1.5">
+                    <span className="w-2 h-2 rounded-full bg-[#E4E2DC]" />
+                    <span className="w-2 h-2 rounded-full bg-[#E4E2DC]" />
+                    <span className="w-2 h-2 rounded-full bg-[#E4E2DC]" />
+                  </div>
+                  <span className="text-[10px] text-[#08182d]/40">workspace.ams</span>
+                </div>
                 <div className="h-4 bg-[#FAF9F6] border border-[#E4E2DC] rounded w-1/3" />
-                <div className="h-20 bg-[#FAF9F6] border border-[#E4E2DC] rounded w-full" />
+                <div className="h-16 bg-[#FAF9F6] border border-[#E4E2DC] rounded w-full flex items-center justify-center text-[#2E6FF2] font-semibold">
+                  METRICS & WORKFLOW ENGINE
+                </div>
               </div>
             </div>
-            <span className="font-mono text-xs text-[#08182d]/50 block mb-1">Concept · SaaS Dashboard</span>
-            <h4 className="font-bold text-lg text-[#08182d]">Analytical Workspace & Metrics UI</h4>
+            <div className="flex items-center justify-between mb-2">
+              <span className="font-mono text-xs uppercase bg-[#FAF9F6] border border-[#E4E2DC] px-2 py-0.5 rounded text-[#08182d]/60">
+                SAAS DASHBOARD
+              </span>
+              <span className="font-mono text-xs text-[#08182d]/50">Concept — 2026</span>
+            </div>
+            <h4 className="font-bold text-lg text-[#08182d] group-hover:text-[#2E6FF2] transition-colors">
+              Analytical Workspace & Metrics UI
+            </h4>
           </div>
 
-          <div className="bg-white border border-[#E4E2DC] rounded-xl p-6 shadow-sm hover:border-[#2E6FF2]/50 transition-colors">
-            <div className="bg-[#FAF9F6] border border-[#E4E2DC] rounded-lg p-6 mb-5 aspect-[16/10] flex items-center justify-center">
-              <div className="w-full h-full bg-white border border-[#E4E2DC] rounded p-4 font-mono text-xs space-y-2">
+          {/* Concept Card 2 */}
+          <div className="bg-white border border-[#E4E2DC] rounded-xl p-6 shadow-sm hover:border-[#2E6FF2]/50 transition-colors group">
+            <div className="bg-[#FAF9F6] border border-[#E4E2DC] rounded-lg p-6 mb-5 aspect-[16/10] flex items-center justify-center relative overflow-hidden">
+              <div className="w-full h-full bg-white border border-[#E4E2DC] rounded p-4 font-mono text-xs space-y-3 shadow-sm">
+                <div className="flex justify-between items-center pb-2 border-b border-[#E4E2DC]">
+                  <div className="flex gap-1.5">
+                    <span className="w-2 h-2 rounded-full bg-[#E4E2DC]" />
+                    <span className="w-2 h-2 rounded-full bg-[#E4E2DC]" />
+                  </div>
+                  <span className="text-[10px] text-[#08182d]/40">automation.n8n</span>
+                </div>
                 <div className="h-4 bg-[#FAF9F6] border border-[#E4E2DC] rounded w-1/2" />
-                <div className="h-16 bg-[#2E6FF2]/10 border border-[#2E6FF2]/20 rounded w-full" />
+                <div className="h-16 bg-[#2E6FF2]/10 border border-[#2E6FF2]/20 rounded w-full flex items-center justify-center text-[#2E6FF2] font-semibold">
+                  AUTOMATED LEAD PIPELINE
+                </div>
               </div>
             </div>
-            <span className="font-mono text-xs text-[#08182d]/50 block mb-1">Concept · Automation</span>
-            <h4 className="font-bold text-lg text-[#08182d]">Internal Lead Processing Pipeline</h4>
+            <div className="flex items-center justify-between mb-2">
+              <span className="font-mono text-xs uppercase bg-[#FAF9F6] border border-[#E4E2DC] px-2 py-0.5 rounded text-[#08182d]/60">
+                AUTOMATION
+              </span>
+              <span className="font-mono text-xs text-[#08182d]/50">Concept — 2026</span>
+            </div>
+            <h4 className="font-bold text-lg text-[#08182d] group-hover:text-[#2E6FF2] transition-colors">
+              Internal Lead Processing Pipeline
+            </h4>
           </div>
         </div>
       </section>
@@ -294,7 +360,7 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Code Ownership Quote */}
+          {/* Code Ownership Guarantee Quote */}
           <div className="bg-white border-l-4 border-[#2E6FF2] border-y border-r border-[#E4E2DC] p-8 md:p-10 rounded-r-xl shadow-sm">
             <blockquote className="text-xl md:text-2xl font-semibold text-[#08182d] leading-relaxed mb-3">
               &ldquo;Your code lives directly in your GitHub organization from day one. It transfers completely on final payment. No lock-in, no hostage situations.&rdquo;
@@ -306,68 +372,22 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 7. CONTACT SECTION */}
-      <section id="contact" className="py-28 px-6 md:px-12 max-w-6xl mx-auto">
-        <div className="max-w-2xl mx-auto">
-          <div className="text-center mb-12">
-            <span className="font-mono text-xs uppercase tracking-widest text-[#08182d]/60 mb-3 block">
-              [05] CONTACT
-            </span>
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[#08182d]">
-              Ready to build something real.
-            </h2>
-          </div>
-
-          <form
-            onSubmit={(e) => e.preventDefault()}
-            className="bg-white border border-[#E4E2DC] rounded-xl p-8 md:p-10 shadow-sm space-y-5"
-          >
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-              <div>
-                <label className="block text-xs font-mono uppercase text-[#08182d]/70 mb-2">
-                  Name
-                </label>
-                <input
-                  type="text"
-                  placeholder="Your Name"
-                  className="w-full bg-[#FAF9F6] border border-[#E4E2DC] rounded px-4 py-3 text-sm focus:outline-none focus:border-[#2E6FF2] transition-colors"
-                />
-              </div>
-              <div>
-                <label className="block text-xs font-mono uppercase text-[#08182d]/70 mb-2">
-                  Email
-                </label>
-                <input
-                  type="email"
-                  placeholder="name@company.com"
-                  className="w-full bg-[#FAF9F6] border border-[#E4E2DC] rounded px-4 py-3 text-sm focus:outline-none focus:border-[#2E6FF2] transition-colors"
-                />
-              </div>
-            </div>
-
-            <div>
-              <label className="block text-xs font-mono uppercase text-[#08182d]/70 mb-2">
-                Project Overview
-              </label>
-              <textarea
-                rows={4}
-                placeholder="Describe what you want to build (web app, Shopify store, SaaS, internal automation)..."
-                className="w-full bg-[#FAF9F6] border border-[#E4E2DC] rounded px-4 py-3 text-sm focus:outline-none focus:border-[#2E6FF2] transition-colors resize-none"
-              />
-            </div>
-
-            <SpecularButton size="lg" className="w-full">
-              Send Inquiry
-            </SpecularButton>
-          </form>
-
-          <p className="text-center text-sm text-[#08182d]/70 mt-6">
-            Or email us directly at{' '}
-            <a href="mailto:hello@amssolutions.si" className="text-[#2E6FF2] font-semibold hover:underline">
-              hello@amssolutions.si
-            </a>
+      {/* 7. INTERACTIVE PROJECT CALCULATOR / SCOPE BUILDER SECTION */}
+      <section id="calculator" className="py-28 px-6 md:px-12 max-w-4xl mx-auto">
+        <div className="text-center mb-12">
+          <span className="font-mono text-xs uppercase tracking-widest text-[#08182d]/60 mb-3 block">
+            [05] INTERACTIVE PROJECT CALCULATOR
+          </span>
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[#08182d] mb-4">
+            Build your project scope in 60 seconds.
+          </h2>
+          <p className="text-base text-[#08182d]/70 max-w-xl mx-auto">
+            Answer 4 quick questions about your project to get an estimated architecture scope and tailored proposal.
           </p>
         </div>
+
+        {/* Multi-step Project Scope Builder */}
+        <ProjectCalculator />
       </section>
 
       {/* 8. FOOTER */}
@@ -379,7 +399,7 @@ export default function Home() {
           </div>
 
           <p className="text-xs font-mono text-[#08182d]/60 text-center md:text-right">
-            © {new Date().getFullYear()} AMS Solutions d.o.o. · Koper, Slovenia
+            © {new Date().getFullYear()} AMS Solutions d.o.o. · Koper, Slovenia · hello@amssolutions.si
           </p>
         </div>
       </footer>
