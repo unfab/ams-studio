@@ -35,13 +35,14 @@ export const TrembleShowcase: React.FC = () => {
           </div>
 
           {/* Actual Tremble Website Screenshot */}
-          <div className="relative aspect-[16/10] overflow-hidden">
+          {/* Actual Tremble Website Screenshot */}
+          <div className="relative w-full h-auto overflow-hidden">
             <Image
-              src="/tremble-hero-screenshot.png"
-              alt="Tremble Website Screenshot"
+              src="/tremble-live-screenshot.png"
+              alt="Tremble Website Live Screenshot"
               width={1280}
               height={800}
-              className="object-cover object-top w-full h-full group-hover:scale-105 transition-transform duration-500"
+              className="w-full h-auto object-contain object-top group-hover:scale-105 transition-transform duration-500"
             />
           </div>
         </div>

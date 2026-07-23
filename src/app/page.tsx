@@ -199,13 +199,13 @@ export default function Home() {
                       <span className="font-mono text-[9px] text-white/50">{project.url.replace('https://', '')}</span>
                       <span className="w-3" />
                     </div>
-                    <div className="relative aspect-[16/10] overflow-hidden rounded-b border-x border-b border-white/10">
+                    <div className="relative w-full h-auto overflow-hidden rounded-b border-x border-b border-white/10">
                       <Image
                         src={project.image}
                         alt={project.title}
                         width={1280}
                         height={800}
-                        className="object-cover object-top w-full h-full group-hover:scale-105 transition-transform duration-500"
+                        className="w-full h-auto object-contain object-top group-hover:scale-105 transition-transform duration-500"
                       />
                     </div>
                   </div>
@@ -296,13 +296,13 @@ export default function Home() {
                     <span className="font-mono text-[8px] text-white/50">{demo.url.replace('https://', '')}</span>
                     <span className="w-2" />
                   </div>
-                  <div className="relative aspect-[16/10] overflow-hidden rounded-b border-x border-b border-white/10">
+                  <div className="relative w-full h-auto overflow-hidden rounded-b border-x border-b border-white/10">
                     <Image
                       src={demo.image}
                       alt={demo.title}
                       width={1280}
                       height={800}
-                      className="object-cover object-top w-full h-full group-hover:scale-105 transition-transform duration-500"
+                      className="w-full h-auto object-contain object-top group-hover:scale-105 transition-transform duration-500"
                     />
                   </div>
                 </div>
