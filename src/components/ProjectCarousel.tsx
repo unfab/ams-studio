@@ -1,8 +1,8 @@
 'use client';
 
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import Image from 'next/image';
-import { ExternalLink, ChevronLeft, ChevronRight, Sparkles, Globe, Building2, Utensils, Mountain, Truck, Calculator, Cpu, Hammer } from 'lucide-react';
+import { ExternalLink, ChevronLeft, ChevronRight, Sparkles, Globe, RefreshCw } from 'lucide-react';
 
 export interface Project {
   title: string;
@@ -19,6 +19,7 @@ interface ProjectCarouselProps {
 
 export function ProjectCarousel({ projects }: ProjectCarouselProps) {
   const scrollRef = useRef<HTMLDivElement>(null);
+  const [iframeLoaded, setIframeLoaded] = useState<Record<number, boolean>>({});
 
   const handleScrollLeft = () => {
     if (scrollRef.current) {
@@ -38,17 +39,17 @@ export function ProjectCarousel({ projects }: ProjectCarouselProps) {
       <div className="mb-8 flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div>
           <span className="font-mono text-xs uppercase tracking-widest text-[#2E6FF2] font-semibold flex items-center gap-2 mb-1">
-            <Sparkles className="w-3.5 h-3.5" /> WHAT WE CAN BUILD FOR YOU
+            <Sparkles className="w-3.5 h-3.5" /> LIVE NETLIFY PREVIEW ENGINE
           </span>
           <h3 className="text-2xl md:text-3xl font-extrabold text-[#08182d]">
-            Industry Demos & Design Systems
+            Industry Demos & Live Staging Builds
           </h3>
         </div>
 
         {/* Left & Right Scroll Controls */}
         <div className="flex items-center gap-3">
           <span className="font-tech text-xs text-[#08182d]/50 hidden sm:inline-block">
-            Use arrows or drag to explore
+            Use arrows or scroll to explore
           </span>
           <div className="flex items-center gap-2">
             <button 
@@ -77,14 +78,14 @@ export function ProjectCarousel({ projects }: ProjectCarouselProps) {
         {projects.map((project, idx) => {
           const IconComponent = project.icon;
           const domain = project.url.replace('https://', '').replace('/', '');
-          const hasSpecificImage = project.image && project.image !== '';
+          const liveThumbnailUrl = `https://image.thum.io/get/width/600/crop/750/${project.url}`;
 
           return (
             <div
               key={idx}
               className="w-[290px] sm:w-[320px] flex-shrink-0 snap-start bg-white border border-[#E4E2DC] rounded-2xl overflow-hidden shadow-sm hover:shadow-md hover:border-[#2E6FF2]/50 transition-all duration-300 group/card flex flex-col justify-between"
             >
-              {/* Browser Window Header & Preview */}
+              {/* Browser Window Header & Live Embed Container */}
               <div className="bg-[#08182d] p-3 border-b border-[#E4E2DC] relative">
                 <div className="h-6 bg-[#0c223f] border border-white/10 rounded-t-lg px-2.5 flex items-center justify-between mb-2">
                   <div className="flex items-center gap-1.5">
@@ -96,45 +97,36 @@ export function ProjectCarousel({ projects }: ProjectCarouselProps) {
                   <span className="w-2" />
                 </div>
                 
-                {/* Screenshot or Dynamic High-Contrast Preview Card */}
-                <div className="relative w-full h-[145px] overflow-hidden rounded-b-lg border-x border-b border-white/10 bg-gradient-to-br from-[#0B1424] via-[#08182d] to-[#0d223e]">
-                  {hasSpecificImage ? (
-                    <Image
-                      src={project.image!}
-                      alt={project.title}
-                      fill
-                      className="object-cover object-top opacity-95 group-hover/card:scale-105 transition-transform duration-500"
-                      sizes="320px"
+                {/* LIVE EMBEDDED PREVIEW FRAME (Real-Time Webpage Screenshot / Live Iframe) */}
+                <div className="relative w-full h-[150px] overflow-hidden rounded-b-lg border-x border-b border-white/10 bg-[#0B1424]">
+                  {/* Option A: Scaled Live Iframe Preview */}
+                  <div className="w-[1000px] h-[600px] scale-[0.31] origin-top-left pointer-events-none select-none relative z-10">
+                    <iframe
+                      src={project.url}
+                      className="w-full h-full border-0 bg-white"
+                      title={project.title}
+                      loading="lazy"
+                      onLoad={() => setIframeLoaded((prev) => ({ ...prev, [idx]: true }))}
                     />
-                  ) : (
-                    /* High-End Themed Developer Mockup Graphic (No Mismatched Photos!) */
-                    <div className="w-full h-full p-4 flex flex-col justify-between relative overflow-hidden text-white font-tech">
-                      <div className="flex items-center justify-between text-[10px] text-white/50 border-b border-white/10 pb-2">
-                        <span className="flex items-center gap-1 text-[#2E6FF2] font-semibold">
-                          <Globe className="w-3 h-3" /> LIVE STAGING
-                        </span>
-                        <span className="px-1.5 py-0.5 bg-white/10 rounded text-[9px]">NETLIFY</span>
-                      </div>
+                  </div>
 
-                      <div className="my-auto py-2">
-                        <span className="font-mono text-[9px] text-[#2E6FF2] uppercase tracking-wider block mb-1 font-semibold">
-                          {project.category}
-                        </span>
-                        <h5 className="font-bold text-white text-base tracking-tight truncate font-sans">
-                          {project.title}
-                        </h5>
-                      </div>
-
-                      <div className="flex items-center justify-between text-[9px] text-white/40 border-t border-white/10 pt-2">
-                        <span>AMS Studio Build</span>
-                        <span>{domain}</span>
-                      </div>
+                  {/* Fallback Live Screenshot API Overlay if iframe is loading */}
+                  {!iframeLoaded[idx] && (
+                    <div className="absolute inset-0 bg-[#0B1424] flex items-center justify-center z-0">
+                      {/* Live Screenshot Micro-Service */}
+                      <Image
+                        src={liveThumbnailUrl}
+                        alt={project.title}
+                        fill
+                        className="object-cover object-top opacity-90"
+                        unoptimized
+                      />
                     </div>
                   )}
                 </div>
               </div>
 
-              {/* Simplified Card Details */}
+              {/* Card Details */}
               <div className="p-5 flex-1 flex flex-col justify-between space-y-4">
                 <div>
                   <div className="flex items-center gap-2 mb-2.5">
@@ -167,7 +159,7 @@ export function ProjectCarousel({ projects }: ProjectCarouselProps) {
                     rel="noopener noreferrer"
                     className="pt-3 border-t border-[#E4E2DC] text-[#2E6FF2] font-semibold text-xs inline-flex w-full items-center justify-between group-hover/card:underline"
                   >
-                    <span>Click here to view the demo</span>
+                    <span>Click here to view the live demo</span>
                     <ExternalLink className="w-3.5 h-3.5" />
                   </a>
                 </div>
