@@ -549,7 +549,7 @@ export default async function handler(req: Request) {
         </div>
       </section>
 
-      {/* 6. PROCESS & GUARANTEE */}
+      {/* 6. PROCESS & CODE OWNERSHIP GUARANTEE QUOTE (BRAND IDENTITY V1.0 INTEGRATED) */}
       <section id="process" className="py-28 px-6 md:px-12 border-b border-[#E4E2DC] bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20">
@@ -602,7 +602,7 @@ export default async function handler(req: Request) {
                   Code Ownership Guarantee
                 </div>
                 
-                <blockquote className="text-2xl md:text-3xl font-bold text-[#08182d] leading-snug mb-6">
+                <blockquote className="font-display text-2xl md:text-3xl font-bold text-[#08182d] leading-snug mb-6 tracking-tight">
                   &ldquo;Every project is delivered directly to the client&apos;s own GitHub organization. You own 100% of the source code and systems we create.&rdquo;
                 </blockquote>
                 
@@ -615,16 +615,29 @@ export default async function handler(req: Request) {
         </div>
       </section>
 
-      {/* 7. ABOUT MANIFESTO */}
-      <section className="py-28 px-6 md:px-12 border-b border-[#E4E2DC] bg-[#08182d] flex items-center justify-center text-center text-white">
-        <div className="max-w-3xl mx-auto">
-          <LogoIcon className="w-10 h-10 text-white/30 mx-auto mb-6" />
-          <p className="text-2xl md:text-3xl font-light text-white leading-relaxed mb-6">
-            AMS Solutions was founded on one principle: companies should not have to adapt their processes to rigid software. <span className="text-[#2E6FF2] font-medium">Software should adapt to companies.</span>
-          </p>
-          <span className="font-tech text-xs uppercase tracking-widest text-white/40">
-            A Software Product Studio from Slovenia
+      {/* 7. ABOUT MANIFESTO / ENGINEERING PRINCIPLE (BRAND IDENTITY V1.0 INTEGRATED) */}
+      <section className="py-28 px-6 md:px-12 border-b border-[#E4E2DC] bg-[#08182d] flex items-center justify-center text-center text-white relative overflow-hidden">
+        {/* Subtle Ambient Background Texture */}
+        <div className="absolute inset-0 bg-dev-dots opacity-10 pointer-events-none" />
+
+        <div className="max-w-4xl mx-auto relative z-10">
+          <LogoIcon className="w-12 h-12 text-[#2E6FF2] mx-auto mb-6" />
+          
+          <span className="font-tech text-xs uppercase tracking-widest text-[#2E6FF2] mb-6 block font-semibold">
+            OUR ENGINEERING PRINCIPLE
           </span>
+
+          <blockquote className="font-display text-2xl sm:text-3xl md:text-4xl font-normal text-white leading-relaxed mb-8 italic">
+            &ldquo;Companies should not have to adapt their processes to rigid software. <span className="text-[#2E6FF2] font-semibold not-italic font-sans">Software should adapt to companies.</span>&rdquo;
+          </blockquote>
+
+          <div className="inline-flex items-center gap-3 px-4 py-1.5 bg-white/5 border border-white/10 rounded-full font-tech text-xs text-white/50">
+            <span>AMS Solutions d.o.o.</span>
+            <span>·</span>
+            <span>Software Product Studio</span>
+            <span>·</span>
+            <span>Slovenia</span>
+          </div>
         </div>
       </section>
 
