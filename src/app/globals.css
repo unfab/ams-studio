@@ -30,7 +30,7 @@ body {
   overflow-x: hidden;
 }
 
-/* Continuous Infinite Marquee Keyframe */
+/* Continuous Ultra-Slow Infinite Marquee Keyframe */
 @keyframes marquee {
   0% { transform: translateX(0%); }
   100% { transform: translateX(-50%); }
@@ -39,8 +39,13 @@ body {
 .animate-marquee {
   display: flex;
   width: max-content;
-  animation: marquee 40s linear infinite;
+  animation: marquee 110s linear infinite;
   will-change: transform;
+}
+
+/* Pause marquee when hovered for easy reading */
+.animate-marquee:hover {
+  animation-play-state: paused;
 }
 
 /* Subtle Software Developer Grid & Pattern Overlays */
