@@ -7,6 +7,7 @@ import { CardNav } from '@/components/CardNav';
 import { SpecularButton } from '@/components/SpecularButton';
 import { ProjectCalculator } from '@/components/ProjectCalculator';
 import { TrembleShowcase } from '@/components/TrembleShowcase';
+import { ProjectCarousel } from '@/components/ProjectCarousel';
 import { LogoIcon } from '@/components/ui/LogoIcon';
 import { ArrowRight, ArrowUpRight, ShieldCheck, Code2, Globe2, Sparkles, ExternalLink, Activity, Truck, Calculator, Utensils, Building2, Mountain } from 'lucide-react';
 
@@ -277,79 +278,7 @@ export default function Home() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {conceptDemos.map((demo, idx) => {
-            const IconComponent = demo.icon;
-            return (
-              <div
-                key={idx}
-                className="bg-white border border-[#E4E2DC] rounded-xl overflow-hidden shadow-sm hover:border-[#2E6FF2]/50 transition-all group flex flex-col justify-between"
-              >
-                {/* Real Screenshot Preview Frame */}
-                <div className="bg-[#08182d] p-3 border-b border-[#E4E2DC] relative">
-                  <div className="h-5 bg-[#0c223f] border border-white/10 rounded-t px-2 flex items-center justify-between">
-                    <div className="flex items-center gap-1">
-                      <span className="w-1.5 h-1.5 rounded-full bg-red-500/80 inline-block" />
-                      <span className="w-1.5 h-1.5 rounded-full bg-yellow-500/80 inline-block" />
-                      <span className="w-1.5 h-1.5 rounded-full bg-green-500/80 inline-block" />
-                    </div>
-                    <span className="font-mono text-[8px] text-white/50">{demo.url.replace('https://', '')}</span>
-                    <span className="w-2" />
-                  </div>
-                  <div className="relative w-full h-auto overflow-hidden rounded-b border-x border-b border-white/10">
-                    <Image
-                      src={demo.image}
-                      alt={demo.title}
-                      width={1280}
-                      height={800}
-                      className="w-full h-auto object-contain object-top group-hover:scale-105 transition-transform duration-500"
-                    />
-                  </div>
-                </div>
-
-                <div className="p-6 flex-1 flex flex-col justify-between">
-                  <div>
-                    <div className="flex items-center justify-between mb-3">
-                      <span className="font-mono text-[10px] uppercase bg-[#FAF9F6] border border-[#E4E2DC] px-2 py-0.5 rounded text-[#08182d]/60 flex items-center gap-1.5">
-                        <IconComponent className="w-3 h-3 text-[#2E6FF2]" />
-                        {demo.category}
-                      </span>
-                      <span className="font-mono text-[10px] text-[#08182d]/40">INTERACTIVE DEMO</span>
-                    </div>
-
-                    <h4 className="font-bold text-lg text-[#08182d] mb-2 group-hover:text-[#2E6FF2] transition-colors">
-                      {demo.title}
-                    </h4>
-                    <p className="text-xs text-[#08182d]/75 leading-relaxed mb-4">
-                      {demo.desc}
-                    </p>
-
-                    <div className="flex flex-wrap gap-1 mb-4">
-                      {demo.tags.map((t, i) => (
-                        <span
-                          key={i}
-                          className="font-mono text-[9px] bg-[#FAF9F6] border border-[#E4E2DC] px-1.5 py-0.5 rounded text-[#08182d]/70"
-                        >
-                          {t}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-
-                  <a
-                    href={demo.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="pt-3 border-t border-[#E4E2DC] text-[#08182d] hover:text-[#2E6FF2] font-semibold text-xs inline-flex items-center justify-between transition-colors"
-                  >
-                    <span>Launch Live Demo Site</span>
-                    <ArrowUpRight className="w-3.5 h-3.5 text-[#2E6FF2]" />
-                  </a>
-                </div>
-              </div>
-            );
-          })}
-        </div>
+                <ProjectCarousel projects={conceptDemos} />
       </section>
 
       {/* 6. SERVICES SECTION */}
