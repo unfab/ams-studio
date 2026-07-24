@@ -41,13 +41,12 @@ export default function Home() {
     },
   ];
 
-  // REAL NETLIFY DEMO BUILDS WITH VALID SCREENSHOT IMAGES
+  // REAL NETLIFY DEMO BUILDS WITH ACCURATE MATCHING IMAGES (NO MISMATCHED PHOTOS)
   const conceptDemos = [
     {
       title: 'Piran Inštalacije',
       category: 'HVAC & MECH ENGINEERING',
       url: 'https://piran-instalacije.netlify.app/',
-      image: '/formus-screenshot.png',
       tags: ['HVAC', 'ENGINEERING', 'ENERGY'],
       icon: Building2,
     },
@@ -63,7 +62,6 @@ export default function Home() {
       title: 'Astra Group',
       category: 'CONSTRUCTION & INFRASTRUCTURE',
       url: 'https://astra-group.netlify.app/',
-      image: '/spark-screenshot.png',
       tags: ['CONSTRUCTION', 'CIVIL', 'B2B'],
       icon: Building2,
     },
@@ -71,7 +69,6 @@ export default function Home() {
       title: 'VV Inženiring',
       category: 'ENGINEERING & ARCHITECTURE',
       url: 'https://vv-inzeniring.netlify.app/',
-      image: '/slavnik-screenshot.png',
       tags: ['ENGINEERING', 'ARCHITECTURE', 'B2B'],
       icon: Mountain,
     },
@@ -84,10 +81,17 @@ export default function Home() {
       icon: Utensils,
     },
     {
+      title: 'Gostilna Spark',
+      category: 'RESTAURANT & CATERING',
+      url: 'https://gostilna-spark.netlify.app/',
+      image: '/spark-screenshot.png',
+      tags: ['GASTRONOMY', 'EVENTS', 'DIGITAL MENU'],
+      icon: Utensils,
+    },
+    {
       title: 'Počkaj d.o.o.',
       category: 'STEEL STRUCTURES',
       url: 'https://pockaj.netlify.app/',
-      image: '/portsped-screenshot.png',
       tags: ['STEEL', 'INDUSTRIAL', 'INFRASTRUCTURE'],
       icon: Building2,
     },
@@ -95,7 +99,6 @@ export default function Home() {
       title: 'Gopack d.o.o.',
       category: 'PACKAGING AUTOMATION',
       url: 'https://gopack-doo.netlify.app/',
-      image: '/lenova-screenshot.png',
       tags: ['AUTOMATION', 'PACKAGING', 'MACHINERY'],
       icon: Cpu,
     },
@@ -103,15 +106,21 @@ export default function Home() {
       title: 'Kleparstvo Kodelja',
       category: 'ROOFING & SHEET METAL',
       url: 'https://kleparstvo-kodelja.netlify.app/',
-      image: '/slavnik-screenshot.png',
       tags: ['ROOFING', 'TINWORK', 'CRAFT'],
       icon: Building2,
+    },
+    {
+      title: 'Gostišče Pod Slavnikom',
+      category: 'TOURISM & ACCOMMODATION',
+      url: 'https://pod-slavnikom.netlify.app/',
+      image: '/slavnik-screenshot.png',
+      tags: ['TOURISM', 'ACCOMMODATION', 'LOCAL FOOD'],
+      icon: Mountain,
     },
     {
       title: 'Restavracija Delfin',
       category: 'HOSPITALITY & DINING',
       url: 'https://restavracija-delfin.netlify.app/',
-      image: '/spark-screenshot.png',
       tags: ['GASTRONOMY', 'RESERVATIONS', 'SEASIDE'],
       icon: Utensils,
     },
@@ -119,7 +128,6 @@ export default function Home() {
       title: 'Ferokor',
       category: 'METALLURGY & TRADING',
       url: 'https://ferokor.netlify.app/',
-      image: '/portsped-screenshot.png',
       tags: ['METALS', 'LOGISTICS', 'TRADING'],
       icon: Truck,
     },
@@ -127,7 +135,6 @@ export default function Home() {
       title: 'Krovstvo Šuštar',
       category: 'ROOFING & BUILDING',
       url: 'https://krovstvo-sustar.netlify.app/',
-      image: '/slavnik-screenshot.png',
       tags: ['ROOFING', 'CONSTRUCTION', 'CRAFT'],
       icon: Building2,
     },
@@ -135,7 +142,6 @@ export default function Home() {
       title: 'Mizarstvo Likar',
       category: 'CUSTOM JOINERY & WOOD',
       url: 'https://mizarstvo-likar.netlify.app/',
-      image: '/prinaju-screenshot.png',
       tags: ['WOODWORK', 'INTERIOR', 'CUSTOM'],
       icon: Hammer,
     },
@@ -143,7 +149,6 @@ export default function Home() {
       title: 'GM Marc',
       category: 'CIVIL CONSTRUCTION',
       url: 'https://gm-marc.netlify.app/',
-      image: '/spark-screenshot.png',
       tags: ['CIVIL', 'EARTHWORKS', 'HEAVY'],
       icon: Building2,
     },
@@ -335,7 +340,7 @@ export default async function handler(req: Request) {
         </div>
       </section>
 
-      {/* 2. FLAGSHIP PRODUCT (TREMBLE - VIBRANT HIGH-CONTRAST LIGHT/ROSE PAGE-BREAK SECTION) */}
+      {/* 2. FLAGSHIP PRODUCT (TREMBLE) */}
       <section id="products" className="py-28 px-6 md:px-12 bg-white border-y border-[#E4E2DC] relative overflow-hidden">
         
         {/* Tremble Signature Radial Ambient Lighting */}
