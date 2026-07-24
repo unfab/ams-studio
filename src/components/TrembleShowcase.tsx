@@ -2,111 +2,123 @@
 
 import React from 'react';
 import Image from 'next/image';
-import { Radio, Timer, Lock, ArrowRight } from 'lucide-react';
+import { Radio, Timer, ShieldCheck, ArrowUpRight, Lock, Zap } from 'lucide-react';
 
 export const TrembleShowcase: React.FC = () => {
   return (
-    <div className="bg-white border border-[#E4E2DC] rounded-2xl overflow-hidden shadow-sm grid grid-cols-1 lg:grid-cols-12 my-8 relative">
+    <div className="bg-[#FAFAF7] border border-[#E2E2DC] rounded-3xl overflow-hidden shadow-xl grid grid-cols-1 lg:grid-cols-12 my-8 relative">
       
-      {/* Product Content Area */}
-      <div className="lg:col-span-6 p-8 md:p-12 flex flex-col justify-between order-2 lg:order-1 relative z-10">
+      {/* Product Content Area - Tremble Brand Identity */}
+      <div className="lg:col-span-6 p-8 md:p-14 flex flex-col justify-between order-2 lg:order-1 relative z-10">
         <div>
-          <div className="flex flex-wrap gap-2 mb-8">
-            <span className="px-3 py-1 bg-[#FAF9F6] border border-[#E4E2DC] rounded-md text-xs font-mono text-[#08182d]/70">
-              IN-HOUSE PRODUCT
+          <div className="flex flex-wrap items-center gap-3 mb-8">
+            <span className="px-3 py-1 bg-[#1A1A18] text-white rounded-full text-xs font-mono tracking-wider uppercase font-semibold">
+              FLAGSHIP PRODUCT
             </span>
-            <span className="px-3 py-1 bg-[#2E6FF2]/10 border border-[#2E6FF2]/20 rounded-md text-xs font-mono text-[#2E6FF2]">
+            <span className="px-3 py-1 bg-[#F4436C]/10 border border-[#F4436C]/20 rounded-full text-xs font-mono text-[#F4436C] font-semibold">
               PROXIMITY DISCOVERY PLATFORM
             </span>
           </div>
 
-          <h3 className="text-3xl md:text-4xl font-bold text-[#08182d] mb-4">
-            Tremble Dating
-          </h3>
-          <p className="font-mono text-xs text-[#2E6FF2] uppercase tracking-wider mb-8 font-semibold">
-            &ldquo;Meet Someone Real. Without the App.&rdquo;
+          {/* Tremble Identity Logo & Title */}
+          <div className="mb-4">
+            <h3 className="font-display text-4xl md:text-5xl font-black text-[#1A1A18] tracking-tight mb-2">
+              Tremble<span className="text-[#F4436C]">.</span>
+            </h3>
+            <p className="font-display text-lg md:text-xl italic text-[#F4436C] font-medium tracking-tight">
+              &ldquo;Meet Someone Real. Without the App.&rdquo;
+            </p>
+          </div>
+
+          <p className="text-[#6B6B63] text-sm md:text-base leading-relaxed mb-10 font-normal">
+            Tremble is an in-house engineered zero-swiping proximity platform for iOS & Android. Running passively in the background, Tremble discreetly alerts compatible individuals when they cross paths in the physical world.
           </p>
 
-          <p className="text-[#08182d]/70 text-sm md:text-base leading-relaxed mb-10">
-            Tremble is a zero-swiping proximity discovery platform built for iOS & Android. Instead of endless profile swiping and chat rooms, Tremble runs silently in the background and discreetly alerts compatible people when they cross paths in the physical world.
-          </p>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
-            <div className="p-4 bg-[#FAF9F6] border border-[#E4E2DC] rounded-xl hover:border-[#2E6FF2]/30 transition-colors">
-              <div className="flex items-center gap-2 text-xs font-bold text-[#08182d] mb-2">
-                <Radio className="w-4 h-4 text-[#2E6FF2]" />
+          {/* Core Specs Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
+            <div className="p-4 bg-white border border-[#E2E2DC] rounded-2xl shadow-sm hover:border-[#F4436C]/40 transition-colors">
+              <div className="flex items-center gap-2 text-xs font-bold text-[#1A1A18] mb-2 font-mono">
+                <Radio className="w-4 h-4 text-[#F4436C]" />
                 <span>BLE Proximity Engine</span>
               </div>
-              <p className="text-xs text-[#08182d]/60 leading-relaxed">
-                Passive Bluetooth Low Energy scanning with &lt;1% daily battery consumption.
+              <p className="text-xs text-[#6B6B63] leading-relaxed">
+                Passive Bluetooth Low Energy hardware scanning with &lt;1% daily battery draw.
               </p>
             </div>
 
-            <div className="p-4 bg-[#FAF9F6] border border-[#E4E2DC] rounded-xl hover:border-[#2E6FF2]/30 transition-colors">
-              <div className="flex items-center gap-2 text-xs font-bold text-[#08182d] mb-2">
-                <Timer className="w-4 h-4 text-[#2E6FF2]" />
+            <div className="p-4 bg-white border border-[#E2E2DC] rounded-2xl shadow-sm hover:border-[#F4436C]/40 transition-colors">
+              <div className="flex items-center gap-2 text-xs font-bold text-[#1A1A18] mb-2 font-mono">
+                <Timer className="w-4 h-4 text-[#F4436C]" />
                 <span>30-Min Radar Window</span>
               </div>
-              <p className="text-xs text-[#08182d]/60 leading-relaxed">
-                Real-world radar window opens on mutual wave. No chat rooms.
+              <p className="text-xs text-[#6B6B63] leading-relaxed">
+                Ephemeral 30-minute encounter window opens on mutual wave. No chat rooms.
               </p>
             </div>
           </div>
         </div>
 
-        <div className="pt-6 border-t border-[#E4E2DC] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-          <span className="font-mono text-xs text-[#08182d]/50">
-            Engineered in-house by AMS Solutions
+        {/* Footer Meta */}
+        <div className="pt-6 border-t border-[#E2E2DC] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+          <span className="font-mono text-xs text-[#A0A09A]">
+            Designed & Engineered by AMS Solutions
           </span>
           <a
             href="https://tremble.app"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-[#2E6FF2] font-semibold text-xs inline-flex items-center gap-1 hover:underline"
+            className="px-5 py-2.5 bg-[#F4436C] hover:bg-[#C02048] text-white rounded-xl font-semibold text-xs inline-flex items-center gap-2 transition-colors shadow-md shadow-[#F4436C]/20"
           >
             <span>Visit tremble.app</span>
-            <ArrowRight className="w-3.5 h-3.5" />
+            <ArrowUpRight className="w-4 h-4" />
           </a>
         </div>
       </div>
 
-      {/* Real Website Screenshot & Frame Area */}
-      <div className="lg:col-span-6 bg-[#08182d] p-6 md:p-10 flex flex-col justify-center relative overflow-hidden text-white min-h-[420px] order-1 lg:order-2 border-l border-[#E4E2DC]">
+      {/* Tremble Platform Showcase Frame */}
+      <div className="lg:col-span-6 bg-[#1A1A18] p-6 md:p-12 flex flex-col justify-center relative overflow-hidden text-white min-h-[440px] order-1 lg:order-2 border-l border-[#E2E2DC]">
         
-        {/* Real Screenshot Browser Frame */}
-        <div className="relative z-10 w-full max-w-lg mx-auto rounded-xl overflow-hidden border border-white/15 shadow-2xl bg-[#0c223f] group">
-          {/* Browser Window Header */}
-          <div className="h-8 bg-[#08182d] border-b border-white/10 px-4 flex items-center justify-between">
+        {/* Subtle Ambient Radial Glow */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 bg-[#F4436C]/20 blur-[80px] rounded-full pointer-events-none" />
+
+        {/* Browser Showcase Window */}
+        <div className="relative z-10 w-full max-w-lg mx-auto rounded-2xl overflow-hidden border border-white/15 shadow-2xl bg-[#111110] group">
+          {/* Header */}
+          <div className="h-8 bg-[#242422] border-b border-white/10 px-4 flex items-center justify-between">
             <div className="flex items-center gap-1.5">
-              <span className="w-2.5 h-2.5 rounded-full bg-red-500/80 inline-block" />
-              <span className="w-2.5 h-2.5 rounded-full bg-yellow-500/80 inline-block" />
-              <span className="w-2.5 h-2.5 rounded-full bg-green-500/80 inline-block" />
+              <span className="w-2.5 h-2.5 rounded-full bg-[#F4436C] inline-block" />
+              <span className="w-2.5 h-2.5 rounded-full bg-[#F5C842] inline-block" />
+              <span className="w-2.5 h-2.5 rounded-full bg-[#2D9B6F] inline-block" />
             </div>
-            <span className="font-mono text-[10px] text-white/40 flex items-center gap-2">
-              <Lock className="w-3 h-3 text-white/20" /> tremble.app
+            <span className="font-mono text-[10px] text-white/50 flex items-center gap-1.5">
+              <Lock className="w-3 h-3 text-[#F4436C]" /> tremble.app
             </span>
             <span className="w-4" />
           </div>
 
-          {/* Actual Tremble Website Screenshot */}
+          {/* Screenshot */}
           <div className="relative w-full h-auto overflow-hidden">
             <Image
               src="/tremble-live-screenshot.png"
-              alt="Tremble Website Live Screenshot"
+              alt="Tremble Proximity Discovery Experience"
               width={1280}
               height={800}
-              className="w-full h-auto object-cover object-top opacity-90 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
+              className="w-full h-auto object-cover object-top opacity-95 group-hover:scale-105 transition-all duration-700"
             />
           </div>
         </div>
 
-        <div className="absolute bottom-6 left-6 right-6 z-10 flex items-center justify-between text-xs font-mono text-white/60">
-          <span className="flex items-center gap-2">
-            <Lock className="w-3.5 h-3.5 text-[#2E6FF2]" /> Zero Location Logs
+        {/* Security & Architecture Badges */}
+        <div className="relative z-10 mt-6 flex items-center justify-between text-xs font-mono text-white/60 px-2">
+          <span className="flex items-center gap-1.5">
+            <ShieldCheck className="w-4 h-4 text-[#F4436C]" /> Zero Location History
           </span>
-          <span>RAM Ephemeral</span>
+          <span className="flex items-center gap-1.5">
+            <Zap className="w-3.5 h-3.5 text-[#F5C842]" /> RAM Ephemeral Storage
+          </span>
         </div>
       </div>
+
     </div>
   );
 };

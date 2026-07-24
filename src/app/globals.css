@@ -5,7 +5,8 @@
   --foreground: #08182d;
   --navy: #08182d;
   --accent: #2E6FF2;
-  --accent-tremble: #FF2E93;
+  --accent-rose: #F4436C;
+  --accent-tremble: #F4436C;
   --border-line: #E4E2DC;
 }
 
@@ -13,10 +14,11 @@
   --color-ground: #FAF9F6;
   --color-navy: #08182d;
   --color-accent: #2E6FF2;
-  --color-accent-tremble: #FF2E93;
+  --color-accent-rose: #F4436C;
   --color-border-line: #E4E2DC;
-  --font-sans: var(--font-geist-sans), system-ui, sans-serif;
-  --font-mono: var(--font-geist-mono), monospace;
+  --font-sans: var(--font-plus-jakarta), system-ui, sans-serif;
+  --font-serif: var(--font-playfair-display), Georgia, serif;
+  --font-mono: var(--font-jetbrains-mono), monospace;
 }
 
 body {
@@ -28,10 +30,41 @@ body {
   overflow-x: hidden;
 }
 
+/* Subtle Software Developer Grid & Pattern Overlays */
+.bg-dev-grid {
+  background-size: 32px 32px;
+  background-image: 
+    linear-gradient(to right, rgba(8, 24, 45, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(8, 24, 45, 0.04) 1px, transparent 1px);
+}
+
+.bg-dev-dots {
+  background-size: 20px 20px;
+  background-image: radial-gradient(circle, rgba(8, 24, 45, 0.08) 1px, transparent 1px);
+}
+
+/* Hide scrollbar for clean horizontal carousel */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Font helpers */
+.font-display {
+  font-family: var(--font-serif);
+}
+
+.font-tech {
+  font-family: var(--font-mono);
+}
+
 /* Custom Specular Button */
 .specular-button {
-  --sb-radius: 6px;
-  --sb-tint: #2E6FF2;
+  --sb-radius: 8px;
+  --sb-tint: #08182d;
   --sb-text-color: #ffffff;
   --x: 50%;
   --y: 50%;
@@ -42,7 +75,7 @@ body {
   justify-content: center;
   border: none;
   font-family: inherit;
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: 0.01em;
   line-height: 1;
   color: var(--sb-text-color);
@@ -50,7 +83,8 @@ body {
   border-radius: var(--sb-radius);
   cursor: pointer;
   outline: none;
-  transition: transform 0.15s ease, background-color 0.2s ease;
+  transition: transform 0.15s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 12px rgba(8, 24, 45, 0.15);
 }
 
 .specular-button::before {
@@ -74,7 +108,8 @@ body {
 }
 
 .specular-button:hover {
-  background-color: #1c55c9;
+  background-color: #2E6FF2;
+  box-shadow: 0 6px 16px rgba(46, 111, 242, 0.25);
 }
 
 .specular-button:active {
