@@ -2,14 +2,13 @@
 
 import React, { useRef } from 'react';
 import Image from 'next/image';
-import { ExternalLink, ChevronLeft, ChevronRight, Sparkles, Globe, Shield } from 'lucide-react';
+import { ExternalLink, ChevronLeft, ChevronRight, Sparkles, Globe } from 'lucide-react';
 
 export interface Project {
   title: string;
   category: string;
   url: string;
   image?: string;
-  desc: string;
   tags: string[];
   icon: React.ElementType;
 }
@@ -42,7 +41,7 @@ export function ProjectCarousel({ projects }: ProjectCarouselProps) {
             <Sparkles className="w-3.5 h-3.5" /> WHAT WE CAN BUILD FOR YOU
           </span>
           <h3 className="text-xl md:text-2xl font-bold text-[#08182d]">
-            Industry Demos & Custom Build Architecture
+            Industry Demos & Design Systems
           </h3>
         </div>
 
@@ -76,7 +75,7 @@ export function ProjectCarousel({ projects }: ProjectCarouselProps) {
           return (
             <div
               key={idx}
-              className="w-[290px] sm:w-[320px] flex-shrink-0 snap-start bg-white border border-[#E4E2DC] rounded-2xl overflow-hidden shadow-sm hover:shadow-md hover:border-[#2E6FF2]/40 transition-all duration-300 group/card flex flex-col justify-between"
+              className="w-[280px] sm:w-[310px] flex-shrink-0 snap-start bg-white border border-[#E4E2DC] rounded-2xl overflow-hidden shadow-sm hover:shadow-md hover:border-[#2E6FF2]/40 transition-all duration-300 group/card flex flex-col justify-between"
             >
               {/* Browser Preview Window Header */}
               <div className="bg-[#08182d] p-2.5 border-b border-[#E4E2DC] relative">
@@ -90,30 +89,30 @@ export function ProjectCarousel({ projects }: ProjectCarouselProps) {
                   <span className="w-2" />
                 </div>
                 
-                {/* Styled Live Preview Card Container */}
-                <div className="relative w-full h-[125px] overflow-hidden rounded-b-lg border-x border-b border-white/10 bg-gradient-to-br from-[#0B1424] to-[#08182d] p-4 flex flex-col justify-between">
+                {/* Styled Preview Window Card */}
+                <div className="relative w-full h-[130px] overflow-hidden rounded-b-lg border-x border-b border-white/10 bg-gradient-to-br from-[#0B1424] to-[#08182d] p-4 flex flex-col justify-between">
                   <div className="flex items-center justify-between text-white/50 text-[10px] font-mono">
                     <span className="flex items-center gap-1 text-[#2E6FF2]">
-                      <Globe className="w-3 h-3" /> DEMO STAGING
+                      <Globe className="w-3 h-3" /> DEMO SITE
                     </span>
                     <span className="px-1.5 py-0.5 bg-white/10 rounded text-[9px]">LIVE</span>
                   </div>
 
                   <div>
-                    <h5 className="font-bold text-white text-sm tracking-tight truncate">{project.title}</h5>
+                    <h5 className="font-bold text-white text-base tracking-tight truncate">{project.title}</h5>
                     <p className="font-mono text-[9px] text-white/50 uppercase tracking-wider">{project.category}</p>
                   </div>
 
                   <div className="w-full bg-white/10 h-1 rounded-full overflow-hidden">
-                    <div className="bg-[#2E6FF2] h-full w-[70%]" />
+                    <div className="bg-[#2E6FF2] h-full w-[75%]" />
                   </div>
                 </div>
               </div>
 
-              {/* Card Details */}
-              <div className="p-5 flex-1 flex flex-col justify-between">
+              {/* Simplified Card Details */}
+              <div className="p-5 flex-1 flex flex-col justify-between space-y-4">
                 <div>
-                  <div className="flex items-center gap-2 mb-2">
+                  <div className="flex items-center gap-2 mb-3">
                     <div className="w-6 h-6 rounded-md bg-[#FAF9F6] border border-[#E4E2DC] flex items-center justify-center shrink-0">
                       <IconComponent className="w-3.5 h-3.5 text-[#2E6FF2]" />
                     </div>
@@ -122,10 +121,7 @@ export function ProjectCarousel({ projects }: ProjectCarouselProps) {
                     </span>
                   </div>
 
-                  <h4 className="text-base font-bold text-[#08182d] mb-1.5">{project.title}</h4>
-                  <p className="text-xs text-[#08182d]/70 leading-relaxed mb-4 line-clamp-2">
-                    {project.desc}
-                  </p>
+                  <h4 className="text-base font-bold text-[#08182d]">{project.title}</h4>
                 </div>
 
                 <div>
@@ -146,7 +142,7 @@ export function ProjectCarousel({ projects }: ProjectCarouselProps) {
                     rel="noopener noreferrer"
                     className="pt-3 border-t border-[#E4E2DC] text-[#2E6FF2] font-semibold text-xs inline-flex w-full items-center justify-between group-hover/card:underline"
                   >
-                    <span>Visit Live Demo ({domain})</span>
+                    <span>Click here to view the demo</span>
                     <ExternalLink className="w-3.5 h-3.5" />
                   </a>
                 </div>

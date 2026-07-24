@@ -47,8 +47,6 @@ export default function Home() {
       title: 'Piran Inštalacije',
       category: 'HVAC & MECH ENGINEERING',
       url: 'https://piran-instalacije.netlify.app/',
-      image: '/prinaju-screenshot.png',
-      desc: 'Modern HVAC, plumbing, and energy efficiency engineering platform.',
       tags: ['HVAC', 'ENGINEERING', 'ENERGY'],
       icon: Building2,
     },
@@ -56,8 +54,6 @@ export default function Home() {
       title: 'Formus d.o.o.',
       category: 'CNC & METALWORK',
       url: 'https://formus-doo.netlify.app/',
-      image: '/formus-screenshot.png',
-      desc: 'Precision CNC machining and industrial metal components platform.',
       tags: ['INDUSTRIAL', 'CNC', 'MANUFACTURING'],
       icon: Building2,
     },
@@ -65,8 +61,6 @@ export default function Home() {
       title: 'Astra Group',
       category: 'CONSTRUCTION & INFRASTRUCTURE',
       url: 'https://astra-group.netlify.app/',
-      image: '/spark-screenshot.png',
-      desc: 'Commercial building, facility renovation, and civil engineering portal.',
       tags: ['CONSTRUCTION', 'CIVIL', 'B2B'],
       icon: Building2,
     },
@@ -74,8 +68,6 @@ export default function Home() {
       title: 'VV Inženiring',
       category: 'ENGINEERING & ARCHITECTURE',
       url: 'https://vv-inzeniring.netlify.app/',
-      image: '/slavnik-screenshot.png',
-      desc: 'Structural engineering, building supervision, and technical advisory showcase.',
       tags: ['ENGINEERING', 'ARCHITECTURE', 'B2B'],
       icon: Mountain,
     },
@@ -83,8 +75,6 @@ export default function Home() {
       title: 'Luft Bistro',
       category: 'GASTRONOMY & HOSPITALITY',
       url: 'https://luft-bistro.netlify.app/',
-      image: '/prinaju-screenshot.png',
-      desc: 'Boutique culinary experience, fast digital service, and modern gastronomy UI.',
       tags: ['GASTRONOMY', 'HOSPITALITY', 'MENU'],
       icon: Utensils,
     },
@@ -92,8 +82,6 @@ export default function Home() {
       title: 'Počkaj d.o.o.',
       category: 'STEEL STRUCTURES',
       url: 'https://pockaj.netlify.app/',
-      image: '/formus-screenshot.png',
-      desc: 'Heavy industrial steel structures, hall construction, and engineering portfolio.',
       tags: ['STEEL', 'INDUSTRIAL', 'INFRASTRUCTURE'],
       icon: Building2,
     },
@@ -101,8 +89,6 @@ export default function Home() {
       title: 'Gopack d.o.o.',
       category: 'PACKAGING AUTOMATION',
       url: 'https://gopack-doo.netlify.app/',
-      image: '/lenova-screenshot.png',
-      desc: 'Industrial packaging machinery and automated processing tech showcase.',
       tags: ['AUTOMATION', 'PACKAGING', 'MACHINERY'],
       icon: Cpu,
     },
@@ -110,8 +96,6 @@ export default function Home() {
       title: 'Kleparstvo Kodelja',
       category: 'ROOFING & SHEET METAL',
       url: 'https://kleparstvo-kodelja.netlify.app/',
-      image: '/slavnik-screenshot.png',
-      desc: 'Airflow engineering, roof protection systems, and architectural tinwork.',
       tags: ['ROOFING', 'TINWORK', 'CRAFT'],
       icon: Building2,
     },
@@ -119,8 +103,6 @@ export default function Home() {
       title: 'Restavracija Delfin',
       category: 'HOSPITALITY & DINING',
       url: 'https://restavracija-delfin.netlify.app/',
-      image: '/spark-screenshot.png',
-      desc: 'Seaside culinary dining, event hosting, and digital reservation showcase.',
       tags: ['GASTRONOMY', 'RESERVATIONS', 'SEASIDE'],
       icon: Utensils,
     },
@@ -128,8 +110,6 @@ export default function Home() {
       title: 'Ferokor',
       category: 'METALLURGY & TRADING',
       url: 'https://ferokor.netlify.app/',
-      image: '/portsped-screenshot.png',
-      desc: 'Metal trade, raw material supply chain, and industrial logistics portal.',
       tags: ['METALS', 'LOGISTICS', 'TRADING'],
       icon: Truck,
     },
@@ -137,8 +117,6 @@ export default function Home() {
       title: 'Krovstvo Šuštar',
       category: 'ROOFING & BUILDING',
       url: 'https://krovstvo-sustar.netlify.app/',
-      image: '/slavnik-screenshot.png',
-      desc: 'Specialized roofing systems, timber construction, and waterproofing solutions.',
       tags: ['ROOFING', 'CONSTRUCTION', 'CRAFT'],
       icon: Building2,
     },
@@ -146,8 +124,6 @@ export default function Home() {
       title: 'Mizarstvo Likar',
       category: 'CUSTOM JOINERY & WOOD',
       url: 'https://mizarstvo-likar.netlify.app/',
-      image: '/prinaju-screenshot.png',
-      desc: 'Custom interior woodworking, architectural joinery, and furniture design.',
       tags: ['WOODWORK', 'INTERIOR', 'CUSTOM'],
       icon: Hammer,
     },
@@ -155,8 +131,6 @@ export default function Home() {
       title: 'GM Marc',
       category: 'CIVIL CONSTRUCTION',
       url: 'https://gm-marc.netlify.app/',
-      image: '/spark-screenshot.png',
-      desc: 'Civil engineering, heavy machinery earthworks, and infrastructure builds.',
       tags: ['CIVIL', 'EARTHWORKS', 'HEAVY'],
       icon: Building2,
     },
@@ -245,7 +219,7 @@ export default async function handler(req: Request) {
     <main className="min-h-[100dvh] w-full overflow-x-hidden bg-[#FAF9F6] text-[#08182d] selection:bg-[#2E6FF2] selection:text-white relative">
       <CardNav />
 
-      {/* 1. HERO SECTION (FULL WIDTH GRID BACKGROUND & REMOVED PILL TAG) */}
+      {/* 1. HERO SECTION (FULL WIDTH GRID BACKGROUND) */}
       <section className="w-full bg-dev-grid border-b border-[#E4E2DC] pt-48 pb-32 px-6 md:px-12 relative overflow-hidden">
         
         {/* Ambient Gradient Glow */}
@@ -290,7 +264,7 @@ export default async function handler(req: Request) {
             </motion.div>
           </div>
 
-          {/* Hero Visual Widget: Code & Live Dashboard Representation */}
+          {/* Hero Visual Widget */}
           <motion.div 
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -299,7 +273,6 @@ export default async function handler(req: Request) {
           >
             <div className="w-full rounded-2xl border border-[#E4E2DC] bg-white shadow-2xl overflow-hidden relative">
               
-              {/* Header Bar */}
               <div className="h-10 bg-[#08182d] px-4 flex items-center justify-between border-b border-white/10">
                 <div className="flex items-center gap-2">
                   <div className="w-3 h-3 rounded-full bg-red-500/80" />
@@ -312,7 +285,6 @@ export default async function handler(req: Request) {
                 <span className="w-4" />
               </div>
 
-              {/* Code + Live Dashboard Preview Body */}
               <div className="p-6 bg-[#0B1424] text-white font-tech text-xs leading-relaxed space-y-4">
                 <div className="flex items-center justify-between border-b border-white/10 pb-3 text-white/40">
                   <span>// AMS STUDIO SYSTEM STATUS</span>
@@ -330,7 +302,6 @@ export default async function handler(req: Request) {
                   <p>&#125;);</p>
                 </div>
 
-                {/* Simulated Live System Output Card */}
                 <div className="p-4 bg-white/5 border border-white/10 rounded-xl space-y-2 font-sans mt-4">
                   <div className="flex items-center justify-between text-[11px] font-mono text-white/60">
                     <span>LIVE PIPELINE METRICS</span>
@@ -351,17 +322,21 @@ export default async function handler(req: Request) {
         </div>
       </section>
 
-      {/* 2. FLAGSHIP PRODUCT (TREMBLE - ALIGNED WITH BRAND IDENTITY V6.1) */}
-      <section id="products" className="py-28 px-6 md:px-12 bg-white border-b border-[#E4E2DC] relative">
-        <div className="max-w-7xl mx-auto">
+      {/* 2. FLAGSHIP PRODUCT (TREMBLE - HIGH-CONTRAST DARK/ROSE PAGE-BREAK SECTION) */}
+      <section id="products" className="py-28 px-6 md:px-12 bg-[#1A1A18] text-white border-y border-black relative overflow-hidden">
+        
+        {/* Tremble Signature Radial Ambient Lighting */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-5xl h-[600px] bg-[#F4436C]/[0.12] blur-[160px] rounded-full pointer-events-none" />
+
+        <div className="max-w-7xl mx-auto relative z-10">
           <div className="mb-12 text-center">
             <span className="font-tech text-xs uppercase tracking-widest text-[#F4436C] mb-3 block font-semibold">
               IN-HOUSE FLAGSHIP PRODUCT
             </span>
-            <h2 className="font-display text-4xl md:text-6xl font-black tracking-tight text-[#1A1A18] mb-4">
+            <h2 className="font-display text-4xl md:text-6xl font-black tracking-tight text-white mb-4">
               Tremble<span className="text-[#F4436C]">.</span>
             </h2>
-            <p className="font-display text-lg md:text-xl italic text-[#6B6B63] max-w-2xl mx-auto">
+            <p className="font-display text-lg md:text-xl italic text-white/70 max-w-2xl mx-auto">
               The Proximity Discovery Experience. Engineered from scratch by AMS Solutions.
             </p>
           </div>
@@ -370,7 +345,7 @@ export default async function handler(req: Request) {
         </div>
       </section>
 
-      {/* 3. CLIENT SYSTEMS (WITH PROMINENT "IN DEVELOPMENT" BADGES) */}
+      {/* 3. CLIENT SYSTEMS */}
       <section id="active-builds" className="py-28 px-6 md:px-12 border-b border-[#E4E2DC] bg-[#FAF9F6]">
         <div className="max-w-7xl mx-auto">
           <div className="mb-16">
@@ -401,7 +376,6 @@ export default async function handler(req: Request) {
                       </span>
                     </div>
 
-                    {/* PROMINENT IN DEVELOPMENT BADGE */}
                     <div className="inline-flex items-center gap-2 px-3 py-1 bg-amber-500/10 border border-amber-500/30 rounded-full text-amber-700 text-xs font-tech font-semibold mb-6">
                       <span className="w-2 h-2 rounded-full bg-amber-500 animate-ping" />
                       <span>{project.status}</span>
@@ -486,7 +460,6 @@ export default async function handler(req: Request) {
             </p>
           </div>
 
-          {/* Interactive Pillars Grid + Live Preview Deck */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
             
             {/* Service Navigation Tabs */}
@@ -557,7 +530,6 @@ export default async function handler(req: Request) {
                     </div>
                   </div>
 
-                  {/* Interactive Code Architecture Snippet */}
                   <div className="bg-[#08182d] rounded-2xl p-4 border border-white/10 text-white font-tech text-[11px] overflow-x-auto">
                     <div className="flex items-center justify-between text-white/40 pb-2 mb-2 border-b border-white/10 text-[10px]">
                       <span>SYSTEM ARCHITECTURE SNIPPET</span>

@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AMS Solutions — Brand Identity System & Design System v1.0</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,700;0,900;1,400&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #08182d;
+    --navy-light: #0d223e;
+    --navy-dark: #040d1a;
+    --accent: #2E6FF2;
+    --accent-hover: #1c55c9;
+    --rose: #F4436C;
+    --bg-ground: #FAF9F6;
+    --bg-surface: #FFFFFF;
+    --border: #E4E2DC;
+    --text-primary: #08182d;
+    --text-secondary: rgba(8, 24, 45, 0.7);
+    --text-muted: rgba(8, 24, 45, 0.4);
+
+    --font-ui: 'Plus Jakarta Sans', system-ui, sans-serif;
+    --font-display: 'Playfair Display', Georgia, serif;
+    --font-mono: 'JetBrains Mono', monospace;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: var(--font-ui);
+    background: var(--bg-ground);
+    color: var(--text-primary);
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  /* SIDE NAVIGATION */
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 240px;
+    height: 100vh;
+    background: var(--navy);
+    color: white;
+    padding: 32px 24px;
+    overflow-y: auto;
+    z-index: 100;
+  }
+  .sidebar-logo {
+    font-size: 18px;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    color: white;
+    margin-bottom: 4px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .sidebar-logo span { color: var(--accent); }
+  .sidebar-sub {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.5);
+    margin-bottom: 32px;
+  }
+  .sidebar a {
+    display: block;
+    font-size: 13px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    padding: 6px 0 6px 12px;
+    border-left: 2px solid transparent;
+    transition: all 0.15s;
+  }
+  .sidebar a:hover {
+    color: white;
+    border-left-color: var(--accent);
+  }
+  .sidebar-group {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    color: rgba(255, 255, 255, 0.4);
+    margin: 24px 0 8px;
+  }
+
+  /* MAIN CONTENT */
+  .main {
+    margin-left: 240px;
+    max-width: 1000px;
+    padding: 60px 64px 120px;
+  }
+
+  .doc-section { margin-bottom: 80px; }
+  .section-tag {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 8px;
+    display: block;
+  }
+  h1.title {
+    font-size: 42px;
+    font-weight: 800;
+    letter-spacing: -0.04em;
+    line-height: 1.1;
+    margin-bottom: 16px;
+  }
+  h2.section-title {
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    margin-bottom: 20px;
+  }
+  .prose {
+    font-size: 16px;
+    color: var(--text-secondary);
+    margin-bottom: 24px;
+    max-width: 720px;
+  }
+
+  /* COLOR SWATCHES */
+  .color-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 16px;
+    margin-top: 24px;
+  }
+  .swatch {
+    background: var(--bg-surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  .swatch-color { height: 90px; width: 100%; }
+  .swatch-info { padding: 12px; }
+  .swatch-name { font-weight: 700; font-size: 13px; }
+  .swatch-hex { font-family: var(--font-mono); font-size: 11px; color: var(--text-muted); }
+
+  /* TYPOGRAPHY SHOWCASE */
+  .type-specimen {
+    background: var(--bg-surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 32px;
+    margin-bottom: 20px;
+  }
+  .type-label { font-family: var(--font-mono); font-size: 11px; color: var(--accent); margin-bottom: 12px; }
+
+  /* COMPONENT SHOWCASE */
+  .btn-sample {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 24px;
+    background: var(--navy);
+    color: white;
+    font-weight: 600;
+    font-size: 14px;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+  .btn-sample:hover { background: var(--accent); }
+
+  .divider { height: 1px; background: var(--border); margin: 60px 0; }
+</style>
+</head>
+<body>
+
+<div class="sidebar">
+  <div class="sidebar-logo">AMS <span>Studio</span></div>
+  <div class="sidebar-sub">Design System v1.0</div>
+  
+  <div class="sidebar-group">Identity</div>
+  <a href="#positioning">Positioning</a>
+  <a href="#colors">Color System</a>
+  <a href="#typography">Typography</a>
+
+  <div class="sidebar-group">Components</div>
+  <a href="#buttons">Buttons & CTA</a>
+  <a href="#cards">Card Architecture</a>
+  <a href="#grid">Background Texture</a>
+</div>
+
+<div class="main">
+  <div class="doc-section" id="positioning">
+    <span class="section-tag">01. BRAND POSITIONING</span>
+    <h1 class="title">AMS Solutions Studio</h1>
+    <p class="prose">
+      AMS Solutions is a software product studio from Slovenia. We engineer custom software systems, SaaS platforms, internal business tools, and in-house digital products (such as Tremble).
+    </p>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="doc-section" id="colors">
+    <span class="section-tag">02. COLOR SYSTEM</span>
+    <h2 class="section-title">Brand Color Tokens</h2>
+    <p class="prose">Primary navy anchor combined with high-contrast studio blue and signature product accents.</p>
+    
+    <div class="color-grid">
+      <div class="swatch">
+        <div class="swatch-color" style="background: #08182d;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Studio Navy</div>
+          <div class="swatch-hex">#08182d</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background: #2E6FF2;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Accent Blue</div>
+          <div class="swatch-hex">#2E6FF2</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background: #FAF9F6;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Surface Ground</div>
+          <div class="swatch-hex">#FAF9F6</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background: #F4436C;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Tremble Rose</div>
+          <div class="swatch-hex">#F4436C</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="doc-section" id="typography">
+    <span class="section-tag">03. TYPOGRAPHY SYSTEM</span>
+    <h2 class="section-title">Font Families & Hierarchy</h2>
+    
+    <div class="type-specimen">
+      <div class="type-label">PRIMARY UI FONT — PLUS JAKARTA SANS</div>
+      <div style="font-family: var(--font-ui); font-size: 32px; font-weight: 800; letter-spacing: -0.03em;">
+        We build software products and systems.
+      </div>
+    </div>
+
+    <div class="type-specimen">
+      <div class="type-label">BRAND / TREMBLE DISPLAY FONT — PLAYFAIR DISPLAY</div>
+      <div style="font-family: var(--font-display); font-size: 36px; font-weight: 900; color: #F4436C;">
+        Tremble. Meet Someone Real.
+      </div>
+    </div>
+
+    <div class="type-specimen">
+      <div class="type-label">TECH & CODE FONT — JETBRAINS MONO</div>
+      <div style="font-family: var(--font-mono); font-size: 14px; color: var(--navy);">
+        const studio = new AMSSolutions(); // 100% Code Ownership
+      </div>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
