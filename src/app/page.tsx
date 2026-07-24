@@ -308,6 +308,7 @@ export default function Home() {
                 </p>
               </div>
 
+              <div className="flex flex-wrap gap-1.5 pt-4 border-t border-[#E4E2DC]">
                 <span className="font-mono text-[10px] bg-[#FAF9F6] border border-[#E4E2DC] px-2 py-0.5 rounded text-[#08182d]/70">CUSTOM ARHITEKTURA</span>
                 <span className="font-mono text-[10px] bg-[#FAF9F6] border border-[#E4E2DC] px-2 py-0.5 rounded text-[#08182d]/70">AVTOMATIZACIJE</span>
                 <span className="font-mono text-[10px] bg-[#FAF9F6] border border-[#E4E2DC] px-2 py-0.5 rounded text-[#08182d]/70">SISTEMSKE INTEGRACIJE</span>
@@ -424,19 +425,7 @@ export default function Home() {
         <ProjectCalculator />
       </section>
 
-      {/* 9. FOOTER */}
-      <footer className="border-t border-[#E4E2DC] bg-[#FAF9F6] py-14 px-6 md:px-12">
-        <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
-          <div className="flex items-center gap-3">
-            <LogoIcon className="w-7 h-7 text-[#08182d]" />
-            <span className="font-bold text-[#08182d] text-lg tracking-tight">AMS Solutions d.o.o.</span>
-          </div>
 
-          <p className="text-xs font-mono text-[#08182d]/60 text-center md:text-right">
-            © {new Date().getFullYear()} AMS Solutions d.o.o. · Koper, Slovenia · hello@amssolutions.si
-          </p>
-        </div>
-      </footer>
     </main>
   );
 }
