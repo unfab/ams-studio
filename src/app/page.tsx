@@ -133,7 +133,7 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 text-sm font-medium text-[#08182d]/80">
             <div className="flex items-center gap-3">
               <Code2 className="w-5 h-5 text-[#2E6FF2] shrink-0" />
-              <span>Full-stack: React, Next.js, Node.js, Flutter, Firebase.</span>
+              <span>Premium UX, hitrost, odzivne animacije in visoka varnost.</span>
             </div>
             <div className="flex items-center gap-3">
               <ShieldCheck className="w-5 h-5 text-[#2E6FF2] shrink-0" />
@@ -379,10 +379,9 @@ export default function Home() {
                 </p>
               </div>
 
-              <div className="flex flex-wrap gap-1.5 pt-4 border-t border-[#E4E2DC]">
-                <span className="font-mono text-[10px] bg-[#FAF9F6] border border-[#E4E2DC] px-2 py-0.5 rounded text-[#08182d]/70">NEXT.JS 14</span>
-                <span className="font-mono text-[10px] bg-[#FAF9F6] border border-[#E4E2DC] px-2 py-0.5 rounded text-[#08182d]/70">NODE / PYTHON</span>
-                <span className="font-mono text-[10px] bg-[#FAF9F6] border border-[#E4E2DC] px-2 py-0.5 rounded text-[#08182d]/70">N8N WORKFLOWS</span>
+                <span className="font-mono text-[10px] bg-[#FAF9F6] border border-[#E4E2DC] px-2 py-0.5 rounded text-[#08182d]/70">CUSTOM ARHITEKTURA</span>
+                <span className="font-mono text-[10px] bg-[#FAF9F6] border border-[#E4E2DC] px-2 py-0.5 rounded text-[#08182d]/70">AVTOMATIZACIJE</span>
+                <span className="font-mono text-[10px] bg-[#FAF9F6] border border-[#E4E2DC] px-2 py-0.5 rounded text-[#08182d]/70">SISTEMSKE INTEGRACIJE</span>
               </div>
             </div>
 
@@ -401,9 +400,9 @@ export default function Home() {
               </div>
 
               <div className="flex flex-wrap gap-1.5 pt-4 border-t border-[#E4E2DC]">
-                <span className="font-mono text-[10px] bg-[#FAF9F6] border border-[#E4E2DC] px-2 py-0.5 rounded text-[#08182d]/70">SHOPIFY HYDROGEN</span>
-                <span className="font-mono text-[10px] bg-[#FAF9F6] border border-[#E4E2DC] px-2 py-0.5 rounded text-[#08182d]/70">TAILWIND CSS</span>
-                <span className="font-mono text-[10px] bg-[#FAF9F6] border border-[#E4E2DC] px-2 py-0.5 rounded text-[#08182d]/70">DESIGN SYSTEMS</span>
+                <span className="font-mono text-[10px] bg-[#FAF9F6] border border-[#E4E2DC] px-2 py-0.5 rounded text-[#08182d]/70">VISOKA KONVERZIJA</span>
+                <span className="font-mono text-[10px] bg-[#FAF9F6] border border-[#E4E2DC] px-2 py-0.5 rounded text-[#08182d]/70">PREMIUM DIZAJN</span>
+                <span className="font-mono text-[10px] bg-[#FAF9F6] border border-[#E4E2DC] px-2 py-0.5 rounded text-[#08182d]/70">FLUIDNE ANIMACIJE</span>
               </div>
             </div>
 
