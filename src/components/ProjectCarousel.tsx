@@ -2,13 +2,13 @@
 
 import React, { useRef } from 'react';
 import Image from 'next/image';
-import { ExternalLink, ChevronLeft, ChevronRight, Sparkles } from 'lucide-react';
+import { ExternalLink, ChevronLeft, ChevronRight, Sparkles, Globe, Shield } from 'lucide-react';
 
 export interface Project {
   title: string;
   category: string;
   url: string;
-  image: string;
+  image?: string;
   desc: string;
   tags: string[];
   icon: React.ElementType;
@@ -23,13 +23,13 @@ export function ProjectCarousel({ projects }: ProjectCarouselProps) {
 
   const scrollLeft = () => {
     if (scrollContainerRef.current) {
-      scrollContainerRef.current.scrollBy({ left: -320, behavior: 'smooth' });
+      scrollContainerRef.current.scrollBy({ left: -340, behavior: 'smooth' });
     }
   };
 
   const scrollRight = () => {
     if (scrollContainerRef.current) {
-      scrollContainerRef.current.scrollBy({ left: 320, behavior: 'smooth' });
+      scrollContainerRef.current.scrollBy({ left: 340, behavior: 'smooth' });
     }
   };
 
@@ -42,7 +42,7 @@ export function ProjectCarousel({ projects }: ProjectCarouselProps) {
             <Sparkles className="w-3.5 h-3.5" /> WHAT WE CAN BUILD FOR YOU
           </span>
           <h3 className="text-xl md:text-2xl font-bold text-[#08182d]">
-            Industry UI & Design Systems
+            Industry Demos & Custom Build Architecture
           </h3>
         </div>
 
@@ -71,32 +71,42 @@ export function ProjectCarousel({ projects }: ProjectCarouselProps) {
       >
         {projects.map((project, idx) => {
           const IconComponent = project.icon;
+          const domain = project.url.replace('https://', '').replace('/', '');
+
           return (
             <div
               key={idx}
-              className="w-[280px] sm:w-[320px] flex-shrink-0 snap-start bg-white border border-[#E4E2DC] rounded-2xl overflow-hidden shadow-sm hover:shadow-md hover:border-[#2E6FF2]/40 transition-all duration-300 group/card flex flex-col justify-between"
+              className="w-[290px] sm:w-[320px] flex-shrink-0 snap-start bg-white border border-[#E4E2DC] rounded-2xl overflow-hidden shadow-sm hover:shadow-md hover:border-[#2E6FF2]/40 transition-all duration-300 group/card flex flex-col justify-between"
             >
-              {/* Compact Screenshot Preview */}
-              <div className="bg-[#08182d] p-2 border-b border-[#E4E2DC] relative">
-                <div className="h-5 bg-[#0c223f] border border-white/10 rounded-t px-2 flex items-center justify-between">
-                  <div className="flex items-center gap-1">
+              {/* Browser Preview Window Header */}
+              <div className="bg-[#08182d] p-2.5 border-b border-[#E4E2DC] relative">
+                <div className="h-6 bg-[#0c223f] border border-white/10 rounded-t-lg px-2.5 flex items-center justify-between">
+                  <div className="flex items-center gap-1.5">
                     <span className="w-1.5 h-1.5 rounded-full bg-red-500/80 inline-block" />
                     <span className="w-1.5 h-1.5 rounded-full bg-yellow-500/80 inline-block" />
                     <span className="w-1.5 h-1.5 rounded-full bg-green-500/80 inline-block" />
                   </div>
-                  <span className="font-mono text-[8px] text-white/50 truncate max-w-[130px]">{project.url.replace('https://', '').replace('/', '')}</span>
+                  <span className="font-mono text-[9px] text-white/60 truncate max-w-[140px]">{domain}</span>
                   <span className="w-2" />
                 </div>
                 
-                {/* Fixed compact aspect ratio */}
-                <div className="relative w-full h-[140px] overflow-hidden rounded-b border-x border-b border-white/10">
-                  <Image
-                    src={project.image}
-                    alt={project.title}
-                    fill
-                    className="object-cover object-top group-hover/card:scale-105 transition-transform duration-500"
-                    sizes="320px"
-                  />
+                {/* Styled Live Preview Card Container */}
+                <div className="relative w-full h-[125px] overflow-hidden rounded-b-lg border-x border-b border-white/10 bg-gradient-to-br from-[#0B1424] to-[#08182d] p-4 flex flex-col justify-between">
+                  <div className="flex items-center justify-between text-white/50 text-[10px] font-mono">
+                    <span className="flex items-center gap-1 text-[#2E6FF2]">
+                      <Globe className="w-3 h-3" /> DEMO STAGING
+                    </span>
+                    <span className="px-1.5 py-0.5 bg-white/10 rounded text-[9px]">LIVE</span>
+                  </div>
+
+                  <div>
+                    <h5 className="font-bold text-white text-sm tracking-tight truncate">{project.title}</h5>
+                    <p className="font-mono text-[9px] text-white/50 uppercase tracking-wider">{project.category}</p>
+                  </div>
+
+                  <div className="w-full bg-white/10 h-1 rounded-full overflow-hidden">
+                    <div className="bg-[#2E6FF2] h-full w-[70%]" />
+                  </div>
                 </div>
               </div>
 
@@ -136,7 +146,7 @@ export function ProjectCarousel({ projects }: ProjectCarouselProps) {
                     rel="noopener noreferrer"
                     className="pt-3 border-t border-[#E4E2DC] text-[#2E6FF2] font-semibold text-xs inline-flex w-full items-center justify-between group-hover/card:underline"
                   >
-                    <span>Explore Concept Demo</span>
+                    <span>Visit Live Demo ({domain})</span>
                     <ExternalLink className="w-3.5 h-3.5" />
                   </a>
                 </div>
