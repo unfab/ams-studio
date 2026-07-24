@@ -30,6 +30,19 @@ body {
   overflow-x: hidden;
 }
 
+/* Continuous Infinite Marquee Keyframe */
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 40s linear infinite;
+  will-change: transform;
+}
+
 /* Subtle Software Developer Grid & Pattern Overlays */
 .bg-dev-grid {
   background-size: 32px 32px;
