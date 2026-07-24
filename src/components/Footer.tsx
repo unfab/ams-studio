@@ -5,7 +5,7 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="w-full bg-[#0A0A0A] text-white py-12 md:py-16 px-6 md:px-12 xl:px-24 border-t border-white/10 mt-24">
+    <footer className="w-full bg-[#08182d] text-white py-12 md:py-16 px-6 md:px-12 xl:px-24 border-t border-white/10 mt-24">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
         
         {/* Brand & Boutique Local SEO */}

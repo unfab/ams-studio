@@ -106,17 +106,17 @@ export const ProjectCalculator: React.FC = () => {
   };
 
   return (
-    <div className="bg-[#111] border border-white/10 rounded-2xl p-6 md:p-10 shadow-2xl relative overflow-hidden">
+    <div className="bg-white border border-[#E4E2DC] rounded-2xl p-6 md:p-10 shadow-lg relative overflow-hidden">
       {/* Progress Bar Header */}
       {!submitted && (
         <div className="mb-10">
-          <div className="flex items-center justify-between font-mono text-xs text-white/50 mb-4">
+          <div className="flex items-center justify-between font-mono text-xs text-[#08182d]/50 mb-4">
             <span>PROJECT SCOPE BUILDER</span>
             <span>STEP {step} OF 4</span>
           </div>
-          <div className="w-full h-1.5 bg-white/5 rounded-full overflow-hidden">
+          <div className="w-full h-1.5 bg-[#FAF9F6] border border-[#E4E2DC] rounded-full overflow-hidden">
             <div
-              className="h-full bg-white transition-all duration-300 ease-out"
+              className="h-full bg-[#2E6FF2] transition-all duration-300 ease-out"
               style={{ width: `${(step / 4) * 100}%` }}
             />
           </div>
@@ -132,11 +132,11 @@ export const ProjectCalculator: React.FC = () => {
             exit={{ opacity: 0, y: -15 }}
             className="text-center py-16 space-y-4"
           >
-            <div className="w-16 h-16 bg-white/10 border border-white/20 rounded-full flex items-center justify-center mx-auto text-white mb-6">
+            <div className="w-16 h-16 bg-[#2E6FF2]/10 border border-[#2E6FF2]/20 rounded-full flex items-center justify-center mx-auto text-[#2E6FF2] mb-6">
               <Check className="w-8 h-8" />
             </div>
-            <h3 className="text-3xl font-bold text-white">Inquiry Received</h3>
-            <p className="text-white/60 max-w-md mx-auto text-sm md:text-base leading-relaxed">
+            <h3 className="text-3xl font-bold text-[#08182d]">Inquiry Received</h3>
+            <p className="text-[#08182d]/60 max-w-md mx-auto text-sm md:text-base leading-relaxed">
               Thank you, {formData.name}. We have logged your project specifications and will reply within 24 hours with an initial technical scope proposal.
             </p>
             <button
@@ -167,10 +167,10 @@ export const ProjectCalculator: React.FC = () => {
             className="space-y-8"
           >
             <div>
-              <h3 className="text-2xl md:text-3xl font-bold text-white mb-3">
+              <h3 className="text-2xl md:text-3xl font-bold text-[#08182d] mb-3">
                 What are you looking to build?
               </h3>
-              <p className="text-sm md:text-base text-white/60">
+              <p className="text-sm md:text-base text-[#08182d]/60">
                 Select the primary scope for your upcoming digital project.
               </p>
             </div>
@@ -186,30 +186,30 @@ export const ProjectCalculator: React.FC = () => {
                     onClick={() => handleSelectType(item.id)}
                     className={`text-left p-5 rounded-xl border transition-all relative flex flex-col justify-between ${
                       isSelected
-                        ? 'border-white bg-white/10 ring-1 ring-white/50'
-                        : 'border-white/10 bg-white/5 hover:border-white/30 hover:bg-white/10'
+                        ? 'border-[#2E6FF2] bg-[#2E6FF2]/5 ring-1 ring-[#2E6FF2]'
+                        : 'border-[#E4E2DC] bg-[#FAF9F6] hover:border-[#08182d]/30 hover:bg-[#FAF9F6]'
                     }`}
                   >
                     <div className="flex items-center justify-between mb-4">
-                      <div className="w-10 h-10 rounded-lg bg-black border border-white/10 flex items-center justify-center text-white">
-                        <IconComponent className="w-5 h-5 text-white/70" />
+                      <div className="w-10 h-10 rounded-lg bg-white border border-[#E4E2DC] flex items-center justify-center text-[#08182d]">
+                        <IconComponent className="w-5 h-5 text-[#2E6FF2]" />
                       </div>
                       {isSelected && (
-                        <div className="w-5 h-5 rounded-full bg-white text-black flex items-center justify-center">
+                        <div className="w-5 h-5 rounded-full bg-[#2E6FF2] text-white flex items-center justify-center">
                           <Check className="w-3.5 h-3.5" />
                         </div>
                       )}
                     </div>
                     <div>
-                      <h4 className="font-bold text-base text-white mb-1.5">{item.title}</h4>
-                      <p className="text-xs text-white/50 leading-relaxed">{item.desc}</p>
+                      <h4 className="font-bold text-base text-[#08182d] mb-1.5">{item.title}</h4>
+                      <p className="text-xs text-[#08182d]/60 leading-relaxed">{item.desc}</p>
                     </div>
                   </button>
                 );
               })}
             </div>
 
-            <div className="pt-6 flex justify-end border-t border-white/10">
+            <div className="pt-6 flex justify-end border-t border-[#E4E2DC]">
               <SpecularButton
                 size="md"
                 disabled={!formData.projectType}
@@ -229,10 +229,10 @@ export const ProjectCalculator: React.FC = () => {
             className="space-y-8"
           >
             <div>
-              <h3 className="text-2xl md:text-3xl font-bold text-white mb-3">
+              <h3 className="text-2xl md:text-3xl font-bold text-[#08182d] mb-3">
                 What is your primary objective?
               </h3>
-              <p className="text-sm md:text-base text-white/60">
+              <p className="text-sm md:text-base text-[#08182d]/60">
                 Help us understand the main goal behind your build.
               </p>
             </div>
@@ -248,34 +248,34 @@ export const ProjectCalculator: React.FC = () => {
                     onClick={() => handleSelectObjective(item.id)}
                     className={`text-left p-5 rounded-xl border transition-all relative flex flex-col justify-between ${
                       isSelected
-                        ? 'border-white bg-white/10 ring-1 ring-white/50'
-                        : 'border-white/10 bg-white/5 hover:border-white/30 hover:bg-white/10'
+                        ? 'border-[#2E6FF2] bg-[#2E6FF2]/5 ring-1 ring-[#2E6FF2]'
+                        : 'border-[#E4E2DC] bg-[#FAF9F6] hover:border-[#08182d]/30 hover:bg-[#FAF9F6]'
                     }`}
                   >
                     <div className="flex items-center justify-between mb-4">
-                      <div className="w-10 h-10 rounded-lg bg-black border border-white/10 flex items-center justify-center text-white">
-                        <IconComponent className="w-5 h-5 text-white/70" />
+                      <div className="w-10 h-10 rounded-lg bg-white border border-[#E4E2DC] flex items-center justify-center text-[#08182d]">
+                        <IconComponent className="w-5 h-5 text-[#2E6FF2]" />
                       </div>
                       {isSelected && (
-                        <div className="w-5 h-5 rounded-full bg-white text-black flex items-center justify-center">
+                        <div className="w-5 h-5 rounded-full bg-[#2E6FF2] text-white flex items-center justify-center">
                           <Check className="w-3.5 h-3.5" />
                         </div>
                       )}
                     </div>
                     <div>
-                      <h4 className="font-bold text-base text-white mb-1.5">{item.title}</h4>
-                      <p className="text-xs text-white/50 leading-relaxed">{item.desc}</p>
+                      <h4 className="font-bold text-base text-[#08182d] mb-1.5">{item.title}</h4>
+                      <p className="text-xs text-[#08182d]/60 leading-relaxed">{item.desc}</p>
                     </div>
                   </button>
                 );
               })}
             </div>
 
-            <div className="pt-6 flex justify-between items-center border-t border-white/10">
+            <div className="pt-6 flex justify-between items-center border-t border-[#E4E2DC]">
               <button
                 type="button"
                 onClick={() => setStep(1)}
-                className="text-xs font-mono text-white/50 hover:text-white inline-flex items-center gap-1 transition-colors"
+                className="text-xs font-mono text-[#08182d]/50 hover:text-[#08182d] inline-flex items-center gap-1 transition-colors"
               >
                 <ArrowLeft className="w-3.5 h-3.5" /> Back
               </button>
@@ -298,10 +298,10 @@ export const ProjectCalculator: React.FC = () => {
             className="space-y-8"
           >
             <div>
-              <h3 className="text-2xl md:text-3xl font-bold text-white mb-3">
+              <h3 className="text-2xl md:text-3xl font-bold text-[#08182d] mb-3">
                 What is your target timeline?
               </h3>
-              <p className="text-sm md:text-base text-white/60">
+              <p className="text-sm md:text-base text-[#08182d]/60">
                 Select your preferred deployment timeframe.
               </p>
             </div>
@@ -316,16 +316,16 @@ export const ProjectCalculator: React.FC = () => {
                     onClick={() => handleSelectTimeline(item.id)}
                     className={`w-full text-left p-5 rounded-xl border transition-all flex items-center justify-between ${
                       isSelected
-                        ? 'border-white bg-white/10 ring-1 ring-white/50'
-                        : 'border-white/10 bg-white/5 hover:border-white/30 hover:bg-white/10'
+                        ? 'border-[#2E6FF2] bg-[#2E6FF2]/5 ring-1 ring-[#2E6FF2]'
+                        : 'border-[#E4E2DC] bg-[#FAF9F6] hover:border-[#08182d]/30 hover:bg-[#FAF9F6]'
                     }`}
                   >
                     <div>
-                      <h4 className="font-bold text-base text-white mb-1">{item.label}</h4>
-                      <p className="text-xs text-white/50">{item.desc}</p>
+                      <h4 className="font-bold text-base text-[#08182d] mb-1">{item.label}</h4>
+                      <p className="text-xs text-[#08182d]/60">{item.desc}</p>
                     </div>
                     {isSelected && (
-                      <div className="w-5 h-5 rounded-full bg-white text-black flex items-center justify-center shrink-0">
+                      <div className="w-5 h-5 rounded-full bg-[#2E6FF2] text-white flex items-center justify-center shrink-0">
                         <Check className="w-3.5 h-3.5" />
                       </div>
                     )}
@@ -334,11 +334,11 @@ export const ProjectCalculator: React.FC = () => {
               })}
             </div>
 
-            <div className="pt-6 flex justify-between items-center border-t border-white/10">
+            <div className="pt-6 flex justify-between items-center border-t border-[#E4E2DC]">
               <button
                 type="button"
                 onClick={() => setStep(2)}
-                className="text-xs font-mono text-white/50 hover:text-white inline-flex items-center gap-1 transition-colors"
+                className="text-xs font-mono text-[#08182d]/50 hover:text-[#08182d] inline-flex items-center gap-1 transition-colors"
               >
                 <ArrowLeft className="w-3.5 h-3.5" /> Back
               </button>
@@ -361,10 +361,10 @@ export const ProjectCalculator: React.FC = () => {
             className="space-y-8"
           >
             <div>
-              <h3 className="text-2xl md:text-3xl font-bold text-white mb-3">
+              <h3 className="text-2xl md:text-3xl font-bold text-[#08182d] mb-3">
                 Where should we send the scope & quote?
               </h3>
-              <p className="text-sm md:text-base text-white/60">
+              <p className="text-sm md:text-base text-[#08182d]/60">
                 Provide your details so our engineering team can review your specifications.
               </p>
             </div>
@@ -372,7 +372,7 @@ export const ProjectCalculator: React.FC = () => {
             <form onSubmit={handleSubmit} className="space-y-5">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                 <div>
-                  <label className="block text-xs font-mono uppercase text-white/50 mb-2">
+                  <label className="block text-xs font-mono uppercase text-[#08182d]/60 mb-2">
                     Your Name *
                   </label>
                   <input
@@ -381,11 +381,11 @@ export const ProjectCalculator: React.FC = () => {
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                     placeholder="Jane Doe"
-                    className="w-full bg-[#151515] border border-white/10 rounded-lg px-4 py-3 text-sm text-white placeholder-white/20 focus:outline-none focus:border-[#2E6FF2] transition-colors"
+                    className="w-full bg-[#FAF9F6] border border-[#E4E2DC] rounded-lg px-4 py-3 text-sm text-[#08182d] placeholder-[#08182d]/30 focus:outline-none focus:border-[#2E6FF2] transition-colors"
                   />
                 </div>
                 <div>
-                  <label className="block text-xs font-mono uppercase text-white/50 mb-2">
+                  <label className="block text-xs font-mono uppercase text-[#08182d]/60 mb-2">
                     Work Email *
                   </label>
                   <input
@@ -394,13 +394,13 @@ export const ProjectCalculator: React.FC = () => {
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                     placeholder="jane@company.com"
-                    className="w-full bg-[#151515] border border-white/10 rounded-lg px-4 py-3 text-sm text-white placeholder-white/20 focus:outline-none focus:border-[#2E6FF2] transition-colors"
+                    className="w-full bg-[#FAF9F6] border border-[#E4E2DC] rounded-lg px-4 py-3 text-sm text-[#08182d] placeholder-[#08182d]/30 focus:outline-none focus:border-[#2E6FF2] transition-colors"
                   />
                 </div>
               </div>
 
               <div>
-                <label className="block text-xs font-mono uppercase text-white/50 mb-2">
+                <label className="block text-xs font-mono uppercase text-[#08182d]/60 mb-2">
                   Company / Organization (Optional)
                 </label>
                 <input
@@ -408,12 +408,12 @@ export const ProjectCalculator: React.FC = () => {
                   value={formData.company}
                   onChange={(e) => setFormData({ ...formData, company: e.target.value })}
                   placeholder="Acme Corp"
-                  className="w-full bg-[#151515] border border-white/10 rounded-lg px-4 py-3 text-sm text-white placeholder-white/20 focus:outline-none focus:border-[#2E6FF2] transition-colors"
+                  className="w-full bg-[#FAF9F6] border border-[#E4E2DC] rounded-lg px-4 py-3 text-sm text-[#08182d] placeholder-[#08182d]/30 focus:outline-none focus:border-[#2E6FF2] transition-colors"
                 />
               </div>
 
               <div>
-                <label className="block text-xs font-mono uppercase text-white/50 mb-2">
+                <label className="block text-xs font-mono uppercase text-[#08182d]/60 mb-2">
                   Brief Project Details
                 </label>
                 <textarea
@@ -421,19 +421,19 @@ export const ProjectCalculator: React.FC = () => {
                   value={formData.details}
                   onChange={(e) => setFormData({ ...formData, details: e.target.value })}
                   placeholder="Tell us any specific features, technical requirements, or goals..."
-                  className="w-full bg-[#151515] border border-white/10 rounded-lg px-4 py-3 text-sm text-white placeholder-white/20 focus:outline-none focus:border-[#2E6FF2] transition-colors resize-none"
+                  className="w-full bg-[#FAF9F6] border border-[#E4E2DC] rounded-lg px-4 py-3 text-sm text-[#08182d] placeholder-[#08182d]/30 focus:outline-none focus:border-[#2E6FF2] transition-colors resize-none"
                 />
               </div>
 
-              <div className="pt-6 flex justify-between items-center border-t border-white/10 mt-8">
+              <div className="pt-6 flex justify-between items-center border-t border-[#E4E2DC] mt-8">
                 <button
                   type="button"
                   onClick={() => setStep(3)}
-                  className="text-xs font-mono text-white/50 hover:text-white inline-flex items-center gap-1 transition-colors"
+                  className="text-xs font-mono text-[#08182d]/50 hover:text-[#08182d] inline-flex items-center gap-1 transition-colors"
                 >
                   <ArrowLeft className="w-3.5 h-3.5" /> Back
                 </button>
-                <button type="submit" className="bg-white text-black px-6 py-3 rounded-lg font-medium hover:bg-white/90 transition-colors flex items-center justify-center gap-2">
+                <button type="submit" className="bg-[#08182d] text-white px-6 py-3 rounded-lg font-medium hover:bg-[#08182d]/90 transition-colors flex items-center justify-center gap-2">
                   Submit Project Scope <ArrowRight className="w-4 h-4" />
                 </button>
               </div>
