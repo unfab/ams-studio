@@ -41,14 +41,39 @@ export default function Home() {
     },
   ];
 
-  // REAL NETLIFY DEMO BUILDS WITH ACCURATE MATCHING IMAGES (NO MISMATCHED PHOTOS)
+  // REAL NETLIFY DEMO BUILDS WITH ACCURATE MATCHING IMAGES (INCLUDING NEWLY ADDED SCREENSHOTS)
   const conceptDemos = [
     {
-      title: 'Piran Inštalacije',
-      category: 'HVAC & MECH ENGINEERING',
-      url: 'https://piran-instalacije.netlify.app/',
-      tags: ['HVAC', 'ENGINEERING', 'ENERGY'],
+      title: 'Ferokor',
+      category: 'METALLURGY & MECHANICAL ARCHITECTURE',
+      url: 'https://ferokor.netlify.app/',
+      image: '/ferokor-screenshot.png',
+      tags: ['METALS', 'LOGISTICS', 'SECURITY'],
+      icon: Truck,
+    },
+    {
+      title: 'Krovstvo Šuštar',
+      category: 'ROOFING & TIMBER CONSTRUCTION',
+      url: 'https://krovstvo-sustar.netlify.app/',
+      image: '/sustar-screenshot.png',
+      tags: ['ROOFING', 'CONSTRUCTION', 'TIMBER'],
       icon: Building2,
+    },
+    {
+      title: 'GM Marc',
+      category: 'CIVIL CONSTRUCTION & EARTHWORKS',
+      url: 'https://gm-marc.netlify.app/',
+      image: '/gmmarc-screenshot.png',
+      tags: ['CIVIL', 'EARTHWORKS', 'HEAVY'],
+      icon: Building2,
+    },
+    {
+      title: 'Restavracija Delfin',
+      category: 'GASTRONOMY & SEASIDE DINING',
+      url: 'https://restavracija-delfin.netlify.app/',
+      image: '/delfin-screenshot.png',
+      tags: ['GASTRONOMY', 'RESERVATIONS', 'SEASIDE'],
+      icon: Utensils,
     },
     {
       title: 'Formus d.o.o.',
@@ -57,20 +82,6 @@ export default function Home() {
       image: '/formus-screenshot.png',
       tags: ['INDUSTRIAL', 'CNC', 'MANUFACTURING'],
       icon: Building2,
-    },
-    {
-      title: 'Astra Group',
-      category: 'CONSTRUCTION & INFRASTRUCTURE',
-      url: 'https://astra-group.netlify.app/',
-      tags: ['CONSTRUCTION', 'CIVIL', 'B2B'],
-      icon: Building2,
-    },
-    {
-      title: 'VV Inženiring',
-      category: 'ENGINEERING & ARCHITECTURE',
-      url: 'https://vv-inzeniring.netlify.app/',
-      tags: ['ENGINEERING', 'ARCHITECTURE', 'B2B'],
-      icon: Mountain,
     },
     {
       title: 'Luft Bistro',
@@ -87,6 +98,14 @@ export default function Home() {
       image: '/spark-screenshot.png',
       tags: ['GASTRONOMY', 'EVENTS', 'DIGITAL MENU'],
       icon: Utensils,
+    },
+    {
+      title: 'Gostišče Pod Slavnikom',
+      category: 'TOURISM & ACCOMMODATION',
+      url: 'https://pod-slavnikom.netlify.app/',
+      image: '/slavnik-screenshot.png',
+      tags: ['TOURISM', 'ACCOMMODATION', 'LOCAL FOOD'],
+      icon: Mountain,
     },
     {
       title: 'Počkaj d.o.o.',
@@ -110,35 +129,6 @@ export default function Home() {
       icon: Building2,
     },
     {
-      title: 'Gostišče Pod Slavnikom',
-      category: 'TOURISM & ACCOMMODATION',
-      url: 'https://pod-slavnikom.netlify.app/',
-      image: '/slavnik-screenshot.png',
-      tags: ['TOURISM', 'ACCOMMODATION', 'LOCAL FOOD'],
-      icon: Mountain,
-    },
-    {
-      title: 'Restavracija Delfin',
-      category: 'HOSPITALITY & DINING',
-      url: 'https://restavracija-delfin.netlify.app/',
-      tags: ['GASTRONOMY', 'RESERVATIONS', 'SEASIDE'],
-      icon: Utensils,
-    },
-    {
-      title: 'Ferokor',
-      category: 'METALLURGY & TRADING',
-      url: 'https://ferokor.netlify.app/',
-      tags: ['METALS', 'LOGISTICS', 'TRADING'],
-      icon: Truck,
-    },
-    {
-      title: 'Krovstvo Šuštar',
-      category: 'ROOFING & BUILDING',
-      url: 'https://krovstvo-sustar.netlify.app/',
-      tags: ['ROOFING', 'CONSTRUCTION', 'CRAFT'],
-      icon: Building2,
-    },
-    {
       title: 'Mizarstvo Likar',
       category: 'CUSTOM JOINERY & WOOD',
       url: 'https://mizarstvo-likar.netlify.app/',
@@ -146,11 +136,25 @@ export default function Home() {
       icon: Hammer,
     },
     {
-      title: 'GM Marc',
-      category: 'CIVIL CONSTRUCTION',
-      url: 'https://gm-marc.netlify.app/',
-      tags: ['CIVIL', 'EARTHWORKS', 'HEAVY'],
+      title: 'Piran Inštalacije',
+      category: 'HVAC & MECH ENGINEERING',
+      url: 'https://piran-instalacije.netlify.app/',
+      tags: ['HVAC', 'ENGINEERING', 'ENERGY'],
       icon: Building2,
+    },
+    {
+      title: 'Astra Group',
+      category: 'CONSTRUCTION & INFRASTRUCTURE',
+      url: 'https://astra-group.netlify.app/',
+      tags: ['CONSTRUCTION', 'CIVIL', 'B2B'],
+      icon: Building2,
+    },
+    {
+      title: 'VV Inženiring',
+      category: 'ENGINEERING & ARCHITECTURE',
+      url: 'https://vv-inzeniring.netlify.app/',
+      tags: ['ENGINEERING', 'ARCHITECTURE', 'B2B'],
+      icon: Mountain,
     },
   ];
 
