@@ -12,7 +12,7 @@ import { LogoIcon } from '@/components/ui/LogoIcon';
 import { 
   ArrowRight, ArrowUpRight, ShieldCheck, Code2, Globe2, Sparkles, 
   Activity, Truck, Calculator, Utensils, Building2, Mountain,
-  Terminal, Workflow, Database, Layers, LayoutGrid, CheckCircle2, ChevronRight, RefreshCw, Cpu
+  Terminal, Workflow, Database, Layers, LayoutGrid, CheckCircle2, ChevronRight, RefreshCw, Cpu, Hammer
 } from 'lucide-react';
 
 export default function Home() {
@@ -41,42 +41,124 @@ export default function Home() {
     },
   ];
 
+  // REAL NETLIFY DEMO BUILDS SUBMITTED BY USER
   const conceptDemos = [
     {
-      title: 'Gostišče Pri Naju',
-      category: 'GASTRONOMY & RESERVATIONS',
-      url: 'https://pri-naju.netlify.app/',
+      title: 'Piran Inštalacije',
+      category: 'HVAC & MECH ENGINEERING',
+      url: 'https://piran-instalacije.netlify.app/',
       image: '/prinaju-screenshot.png',
-      desc: 'Boutique culinary experience, online menu showcase, and reservation flow for high-end dining.',
-      tags: ['GASTRONOMY', 'RESERVATIONS', 'LUXURY UX'],
-      icon: Utensils,
-    },
-    {
-      title: 'Gostilna Spark',
-      category: 'RESTAURANT & EVENTS',
-      url: 'https://gostilna-spark.netlify.app/',
-      image: '/spark-screenshot.png',
-      desc: 'Traditional gastronomy & event catering showcase with modern digital menu system.',
-      tags: ['HOSPITALITY', 'EVENTS', 'DIGITAL MENU'],
-      icon: Utensils,
-    },
-    {
-      title: 'Formus d.o.o.',
-      category: 'CONSTRUCTION & ENGINEERING',
-      url: 'https://formus-doo.netlify.app/',
-      image: '/formus-screenshot.png',
-      desc: 'Heavy industrial engineering, architectural metalworks, and construction portfolio platform.',
-      tags: ['INDUSTRIAL', 'ENGINEERING', 'PORTFOLIO'],
+      desc: 'Modern HVAC, plumbing, and energy efficiency engineering platform.',
+      tags: ['HVAC', 'ENGINEERING', 'ENERGY'],
       icon: Building2,
     },
     {
-      title: 'Gostišče Pod Slavnikom',
-      category: 'REGIONAL TOURISM',
-      url: 'https://pod-slavnikom.netlify.app/',
+      title: 'Formus d.o.o.',
+      category: 'CNC & METALWORK',
+      url: 'https://formus-doo.netlify.app/',
+      image: '/formus-screenshot.png',
+      desc: 'Precision CNC machining and industrial metal components platform.',
+      tags: ['INDUSTRIAL', 'CNC', 'MANUFACTURING'],
+      icon: Building2,
+    },
+    {
+      title: 'Astra Group',
+      category: 'CONSTRUCTION & INFRASTRUCTURE',
+      url: 'https://astra-group.netlify.app/',
+      image: '/spark-screenshot.png',
+      desc: 'Commercial building, facility renovation, and civil engineering portal.',
+      tags: ['CONSTRUCTION', 'CIVIL', 'B2B'],
+      icon: Building2,
+    },
+    {
+      title: 'VV Inženiring',
+      category: 'ENGINEERING & ARCHITECTURE',
+      url: 'https://vv-inzeniring.netlify.app/',
       image: '/slavnik-screenshot.png',
-      desc: 'Regional tourism, local gastronomy, and countryside accommodation booking showcase.',
-      tags: ['TOURISM', 'ACCOMMODATION', 'LOCAL FOOD'],
+      desc: 'Structural engineering, building supervision, and technical advisory showcase.',
+      tags: ['ENGINEERING', 'ARCHITECTURE', 'B2B'],
       icon: Mountain,
+    },
+    {
+      title: 'Luft Bistro',
+      category: 'GASTRONOMY & HOSPITALITY',
+      url: 'https://luft-bistro.netlify.app/',
+      image: '/prinaju-screenshot.png',
+      desc: 'Boutique culinary experience, fast digital service, and modern gastronomy UI.',
+      tags: ['GASTRONOMY', 'HOSPITALITY', 'MENU'],
+      icon: Utensils,
+    },
+    {
+      title: 'Počkaj d.o.o.',
+      category: 'STEEL STRUCTURES',
+      url: 'https://pockaj.netlify.app/',
+      image: '/formus-screenshot.png',
+      desc: 'Heavy industrial steel structures, hall construction, and engineering portfolio.',
+      tags: ['STEEL', 'INDUSTRIAL', 'INFRASTRUCTURE'],
+      icon: Building2,
+    },
+    {
+      title: 'Gopack d.o.o.',
+      category: 'PACKAGING AUTOMATION',
+      url: 'https://gopack-doo.netlify.app/',
+      image: '/lenova-screenshot.png',
+      desc: 'Industrial packaging machinery and automated processing tech showcase.',
+      tags: ['AUTOMATION', 'PACKAGING', 'MACHINERY'],
+      icon: Cpu,
+    },
+    {
+      title: 'Kleparstvo Kodelja',
+      category: 'ROOFING & SHEET METAL',
+      url: 'https://kleparstvo-kodelja.netlify.app/',
+      image: '/slavnik-screenshot.png',
+      desc: 'Airflow engineering, roof protection systems, and architectural tinwork.',
+      tags: ['ROOFING', 'TINWORK', 'CRAFT'],
+      icon: Building2,
+    },
+    {
+      title: 'Restavracija Delfin',
+      category: 'HOSPITALITY & DINING',
+      url: 'https://restavracija-delfin.netlify.app/',
+      image: '/spark-screenshot.png',
+      desc: 'Seaside culinary dining, event hosting, and digital reservation showcase.',
+      tags: ['GASTRONOMY', 'RESERVATIONS', 'SEASIDE'],
+      icon: Utensils,
+    },
+    {
+      title: 'Ferokor',
+      category: 'METALLURGY & TRADING',
+      url: 'https://ferokor.netlify.app/',
+      image: '/portsped-screenshot.png',
+      desc: 'Metal trade, raw material supply chain, and industrial logistics portal.',
+      tags: ['METALS', 'LOGISTICS', 'TRADING'],
+      icon: Truck,
+    },
+    {
+      title: 'Krovstvo Šuštar',
+      category: 'ROOFING & BUILDING',
+      url: 'https://krovstvo-sustar.netlify.app/',
+      image: '/slavnik-screenshot.png',
+      desc: 'Specialized roofing systems, timber construction, and waterproofing solutions.',
+      tags: ['ROOFING', 'CONSTRUCTION', 'CRAFT'],
+      icon: Building2,
+    },
+    {
+      title: 'Mizarstvo Likar',
+      category: 'CUSTOM JOINERY & WOOD',
+      url: 'https://mizarstvo-likar.netlify.app/',
+      image: '/prinaju-screenshot.png',
+      desc: 'Custom interior woodworking, architectural joinery, and furniture design.',
+      tags: ['WOODWORK', 'INTERIOR', 'CUSTOM'],
+      icon: Hammer,
+    },
+    {
+      title: 'GM Marc',
+      category: 'CIVIL CONSTRUCTION',
+      url: 'https://gm-marc.netlify.app/',
+      image: '/spark-screenshot.png',
+      desc: 'Civil engineering, heavy machinery earthworks, and infrastructure builds.',
+      tags: ['CIVIL', 'EARTHWORKS', 'HEAVY'],
+      icon: Building2,
     },
   ];
 
@@ -163,24 +245,14 @@ export default async function handler(req: Request) {
     <main className="min-h-[100dvh] w-full overflow-x-hidden bg-[#FAF9F6] text-[#08182d] selection:bg-[#2E6FF2] selection:text-white relative">
       <CardNav />
 
-      {/* 1. HERO SECTION (With Subtle Dev Grid & Interactive Terminal Widget) */}
-      <section className="relative pt-44 pb-28 px-6 md:px-12 max-w-7xl mx-auto min-h-[90vh] flex flex-col justify-center bg-dev-grid">
+      {/* 1. HERO SECTION (FULL WIDTH GRID BACKGROUND & REMOVED PILL TAG) */}
+      <section className="w-full bg-dev-grid border-b border-[#E4E2DC] pt-48 pb-32 px-6 md:px-12 relative overflow-hidden">
         
         {/* Ambient Gradient Glow */}
-        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-full max-w-4xl h-[500px] bg-[#2E6FF2]/[0.04] blur-[140px] rounded-full pointer-events-none" />
+        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-full max-w-5xl h-[550px] bg-[#2E6FF2]/[0.05] blur-[150px] rounded-full pointer-events-none" />
 
-        <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+        <div className="max-w-7xl mx-auto relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           <div className="lg:col-span-7">
-            <motion.div
-              initial={{ opacity: 0, y: 15 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-            >
-              <span className="font-tech text-xs tracking-widest uppercase text-[#08182d]/60 mb-6 block font-medium flex items-center gap-2.5">
-                <span className="w-2 h-2 rounded-full bg-[#2E6FF2] animate-pulse" />
-                SOFTWARE PRODUCT STUDIO · SLOVENIA
-              </span>
-            </motion.div>
 
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
@@ -280,7 +352,7 @@ export default async function handler(req: Request) {
       </section>
 
       {/* 2. FLAGSHIP PRODUCT (TREMBLE - ALIGNED WITH BRAND IDENTITY V6.1) */}
-      <section id="products" className="py-28 px-6 md:px-12 bg-white border-y border-[#E4E2DC] relative">
+      <section id="products" className="py-28 px-6 md:px-12 bg-white border-b border-[#E4E2DC] relative">
         <div className="max-w-7xl mx-auto">
           <div className="mb-12 text-center">
             <span className="font-tech text-xs uppercase tracking-widest text-[#F4436C] mb-3 block font-semibold">
