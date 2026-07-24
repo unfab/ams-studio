@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useState, useRef, useEffect } from 'react';
-import { LogoFull } from './ui/LogoFull';
 import { LogoIcon } from './ui/LogoIcon';
 import { SpecularButton } from './SpecularButton';
 import { ArrowUpRight } from 'lucide-react';
@@ -32,7 +31,7 @@ export const CardNav: React.FC = () => {
       links: [
         { label: 'Concept Builds', href: '#concept-builds' },
         { label: 'How We Work', href: '#process' },
-        { label: 'Contact Us', href: '#contact' },
+        { label: 'Contact Us', href: '#calculator' },
       ],
     },
   ];
@@ -47,31 +46,31 @@ export const CardNav: React.FC = () => {
   }, [isExpanded]);
 
   return (
-    <div className="fixed top-4 left-1/2 -translate-x-1/2 w-[92%] max-w-6xl z-50">
+    <div className="fixed top-4 left-1/2 -translate-x-1/2 w-[92%] max-w-7xl z-50">
       <nav
         ref={navRef}
-        className="bg-[#FAF9F6] border border-[#E4E2DC] rounded-xl shadow-lg shadow-black/5 overflow-hidden transition-all duration-300 ease-out relative"
+        className="bg-[#111]/80 backdrop-blur-lg border border-white/10 rounded-2xl shadow-2xl overflow-hidden transition-all duration-300 ease-out relative"
         style={{ height: `${navHeight}px` }}
       >
         {/* Top Bar */}
         <div className="h-[64px] px-5 flex items-center justify-between relative z-20">
           <a href="#" className="flex items-center gap-3 group">
-            <LogoIcon className="w-8 h-8 text-[#08182d] group-hover:text-[#2E6FF2] transition-colors" />
-            <span className="font-bold text-[#08182d] text-lg tracking-tight">AMS Solutions</span>
+            <LogoIcon className="w-8 h-8 text-white group-hover:text-[#2E6FF2] transition-colors" />
+            <span className="font-bold text-white text-lg tracking-tight">AMS Solutions</span>
           </a>
 
           {/* Desktop Nav Links */}
-          <div className="hidden md:flex items-center gap-8 text-sm font-medium text-[#08182d]/80">
-            <a href="#products" className="hover:text-[#2E6FF2] transition-colors">
+          <div className="hidden md:flex items-center gap-8 text-sm font-medium text-white/70">
+            <a href="#products" className="hover:text-white transition-colors">
               Products
             </a>
-            <a href="#services" className="hover:text-[#2E6FF2] transition-colors">
+            <a href="#services" className="hover:text-white transition-colors">
               Services
             </a>
-            <a href="#concept-builds" className="hover:text-[#2E6FF2] transition-colors">
+            <a href="#concept-builds" className="hover:text-white transition-colors">
               Concept Builds
             </a>
-            <a href="#process" className="hover:text-[#2E6FF2] transition-colors">
+            <a href="#process" className="hover:text-white transition-colors">
               Process
             </a>
           </div>
@@ -79,7 +78,7 @@ export const CardNav: React.FC = () => {
           <div className="flex items-center gap-4">
             <SpecularButton
               size="md"
-              onClick={() => (window.location.href = '#contact')}
+              onClick={() => (window.location.href = '#calculator')}
               className="hidden sm:inline-flex"
             >
               Start a Project
@@ -87,16 +86,16 @@ export const CardNav: React.FC = () => {
 
             <button
               onClick={() => setIsExpanded(!isExpanded)}
-              className="w-10 h-10 flex flex-col items-center justify-center gap-1.5 rounded-lg hover:bg-black/5 transition-colors focus:outline-none"
+              className="w-10 h-10 flex flex-col items-center justify-center gap-1.5 rounded-lg hover:bg-white/5 transition-colors focus:outline-none"
               aria-label="Toggle Menu"
             >
               <span
-                className={`w-5 h-0.5 bg-[#08182d] transition-all duration-300 ${
+                className={`w-5 h-0.5 bg-white transition-all duration-300 ${
                   isExpanded ? 'rotate-45 translate-y-1' : ''
                 }`}
               />
               <span
-                className={`w-5 h-0.5 bg-[#08182d] transition-all duration-300 ${
+                className={`w-5 h-0.5 bg-white transition-all duration-300 ${
                   isExpanded ? '-rotate-45 -translate-y-1' : ''
                 }`}
               />
@@ -113,10 +112,10 @@ export const CardNav: React.FC = () => {
           {items.map((item, idx) => (
             <div
               key={idx}
-              className="bg-white border border-[#E4E2DC] rounded-lg p-5 flex flex-col justify-between"
+              className="bg-[#151515] border border-white/5 rounded-xl p-5 flex flex-col justify-between"
             >
               <div>
-                <span className="font-mono text-xs uppercase tracking-wider text-[#08182d]/50 block mb-3">
+                <span className="font-mono text-xs uppercase tracking-wider text-white/40 block mb-3">
                   [{`0${idx + 1}`}] {item.label}
                 </span>
                 <div className="flex flex-col gap-2">
@@ -125,10 +124,10 @@ export const CardNav: React.FC = () => {
                       key={i}
                       href={lnk.href}
                       onClick={() => setIsExpanded(false)}
-                      className="text-sm font-medium text-[#08182d] hover:text-[#2E6FF2] transition-colors inline-flex items-center gap-1.5 group"
+                      className="text-sm font-medium text-white/80 hover:text-white transition-colors inline-flex items-center gap-1.5 group"
                     >
                       <span>{lnk.label}</span>
-                      <ArrowUpRight className="w-3.5 h-3.5 opacity-60 group-hover:opacity-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
+                      <ArrowUpRight className="w-3.5 h-3.5 opacity-40 group-hover:opacity-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
                     </a>
                   ))}
                 </div>

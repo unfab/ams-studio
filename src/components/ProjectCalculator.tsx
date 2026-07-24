@@ -37,19 +37,19 @@ export const ProjectCalculator: React.FC = () => {
     },
     {
       id: 'website',
-      title: 'Website or Shopify Store',
-      desc: 'High-converting marketing site or custom Shopify implementation.',
+      title: 'Digital Platform',
+      desc: 'High-converting marketing site or custom e-commerce implementation.',
       icon: ShoppingBag,
     },
     {
       id: 'automation',
-      title: 'AI & Business Automation',
+      title: 'Business Automation',
       desc: 'Lead processing, n8n style internal workflows, custom AI tools.',
       icon: Bot,
     },
     {
       id: 'partnership',
-      title: 'Ongoing Technical Support',
+      title: 'Ongoing SLA & Support',
       desc: 'Dedicated maintenance, SLA monitoring, and iterative feature development.',
       icon: Wrench,
     },
@@ -64,7 +64,7 @@ export const ProjectCalculator: React.FC = () => {
     },
     {
       id: 'scale',
-      title: 'Scale Leads & Conversions',
+      title: 'Scale & Convert',
       desc: 'Optimize existing digital storefront or website to convert more visitors.',
       icon: TrendingUp,
     },
@@ -106,17 +106,17 @@ export const ProjectCalculator: React.FC = () => {
   };
 
   return (
-    <div className="bg-white border border-[#E4E2DC] rounded-xl p-6 md:p-10 shadow-sm relative overflow-hidden">
+    <div className="bg-[#111] border border-white/10 rounded-2xl p-6 md:p-10 shadow-2xl relative overflow-hidden">
       {/* Progress Bar Header */}
       {!submitted && (
-        <div className="mb-8">
-          <div className="flex items-center justify-between font-mono text-xs text-[#08182d]/60 mb-3">
+        <div className="mb-10">
+          <div className="flex items-center justify-between font-mono text-xs text-white/50 mb-4">
             <span>PROJECT SCOPE BUILDER</span>
             <span>STEP {step} OF 4</span>
           </div>
-          <div className="w-full h-1.5 bg-[#FAF9F6] border border-[#E4E2DC] rounded-full overflow-hidden">
+          <div className="w-full h-1.5 bg-white/5 rounded-full overflow-hidden">
             <div
-              className="h-full bg-[#2E6FF2] transition-all duration-300 ease-out"
+              className="h-full bg-white transition-all duration-300 ease-out"
               style={{ width: `${(step / 4) * 100}%` }}
             />
           </div>
@@ -130,13 +130,13 @@ export const ProjectCalculator: React.FC = () => {
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -15 }}
-            className="text-center py-12 space-y-4"
+            className="text-center py-16 space-y-4"
           >
-            <div className="w-16 h-16 bg-[#2E6FF2]/10 border border-[#2E6FF2]/20 rounded-full flex items-center justify-center mx-auto text-[#2E6FF2] mb-4">
+            <div className="w-16 h-16 bg-white/10 border border-white/20 rounded-full flex items-center justify-center mx-auto text-white mb-6">
               <Check className="w-8 h-8" />
             </div>
-            <h3 className="text-2xl font-bold text-[#08182d]">Inquiry Received!</h3>
-            <p className="text-[#08182d]/70 max-w-md mx-auto text-sm leading-relaxed">
+            <h3 className="text-3xl font-bold text-white">Inquiry Received</h3>
+            <p className="text-white/60 max-w-md mx-auto text-sm md:text-base leading-relaxed">
               Thank you, {formData.name}. We have logged your project specifications and will reply within 24 hours with an initial technical scope proposal.
             </p>
             <button
@@ -153,7 +153,7 @@ export const ProjectCalculator: React.FC = () => {
                   details: '',
                 });
               }}
-              className="text-xs font-mono text-[#2E6FF2] underline pt-4 inline-block hover:opacity-80"
+              className="text-xs font-mono text-[#2E6FF2] underline pt-6 inline-block hover:opacity-80"
             >
               Submit another inquiry
             </button>
@@ -164,13 +164,13 @@ export const ProjectCalculator: React.FC = () => {
             initial={{ opacity: 0, x: 15 }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: -15 }}
-            className="space-y-6"
+            className="space-y-8"
           >
             <div>
-              <h3 className="text-xl md:text-2xl font-bold text-[#08182d] mb-2">
+              <h3 className="text-2xl md:text-3xl font-bold text-white mb-3">
                 What are you looking to build?
               </h3>
-              <p className="text-sm text-[#08182d]/70">
+              <p className="text-sm md:text-base text-white/60">
                 Select the primary scope for your upcoming digital project.
               </p>
             </div>
@@ -184,32 +184,32 @@ export const ProjectCalculator: React.FC = () => {
                     key={item.id}
                     type="button"
                     onClick={() => handleSelectType(item.id)}
-                    className={`text-left p-5 rounded-lg border transition-all relative flex flex-col justify-between ${
+                    className={`text-left p-5 rounded-xl border transition-all relative flex flex-col justify-between ${
                       isSelected
-                        ? 'border-[#2E6FF2] bg-[#2E6FF2]/5 ring-1 ring-[#2E6FF2]'
-                        : 'border-[#E4E2DC] bg-[#FAF9F6] hover:border-[#08182d]/30'
+                        ? 'border-white bg-white/10 ring-1 ring-white/50'
+                        : 'border-white/10 bg-white/5 hover:border-white/30 hover:bg-white/10'
                     }`}
                   >
-                    <div className="flex items-center justify-between mb-3">
-                      <div className="w-9 h-9 rounded-md bg-white border border-[#E4E2DC] flex items-center justify-center text-[#08182d]">
-                        <IconComponent className="w-5 h-5 text-[#2E6FF2]" />
+                    <div className="flex items-center justify-between mb-4">
+                      <div className="w-10 h-10 rounded-lg bg-black border border-white/10 flex items-center justify-center text-white">
+                        <IconComponent className="w-5 h-5 text-white/70" />
                       </div>
                       {isSelected && (
-                        <div className="w-5 h-5 rounded-full bg-[#2E6FF2] text-white flex items-center justify-center">
+                        <div className="w-5 h-5 rounded-full bg-white text-black flex items-center justify-center">
                           <Check className="w-3.5 h-3.5" />
                         </div>
                       )}
                     </div>
                     <div>
-                      <h4 className="font-bold text-sm text-[#08182d] mb-1">{item.title}</h4>
-                      <p className="text-xs text-[#08182d]/70 leading-relaxed">{item.desc}</p>
+                      <h4 className="font-bold text-base text-white mb-1.5">{item.title}</h4>
+                      <p className="text-xs text-white/50 leading-relaxed">{item.desc}</p>
                     </div>
                   </button>
                 );
               })}
             </div>
 
-            <div className="pt-4 flex justify-end">
+            <div className="pt-6 flex justify-end border-t border-white/10">
               <SpecularButton
                 size="md"
                 disabled={!formData.projectType}
@@ -226,13 +226,13 @@ export const ProjectCalculator: React.FC = () => {
             initial={{ opacity: 0, x: 15 }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: -15 }}
-            className="space-y-6"
+            className="space-y-8"
           >
             <div>
-              <h3 className="text-xl md:text-2xl font-bold text-[#08182d] mb-2">
+              <h3 className="text-2xl md:text-3xl font-bold text-white mb-3">
                 What is your primary objective?
               </h3>
-              <p className="text-sm text-[#08182d]/70">
+              <p className="text-sm md:text-base text-white/60">
                 Help us understand the main goal behind your build.
               </p>
             </div>
@@ -246,36 +246,36 @@ export const ProjectCalculator: React.FC = () => {
                     key={item.id}
                     type="button"
                     onClick={() => handleSelectObjective(item.id)}
-                    className={`text-left p-5 rounded-lg border transition-all relative flex flex-col justify-between ${
+                    className={`text-left p-5 rounded-xl border transition-all relative flex flex-col justify-between ${
                       isSelected
-                        ? 'border-[#2E6FF2] bg-[#2E6FF2]/5 ring-1 ring-[#2E6FF2]'
-                        : 'border-[#E4E2DC] bg-[#FAF9F6] hover:border-[#08182d]/30'
+                        ? 'border-white bg-white/10 ring-1 ring-white/50'
+                        : 'border-white/10 bg-white/5 hover:border-white/30 hover:bg-white/10'
                     }`}
                   >
-                    <div className="flex items-center justify-between mb-3">
-                      <div className="w-9 h-9 rounded-md bg-white border border-[#E4E2DC] flex items-center justify-center text-[#08182d]">
-                        <IconComponent className="w-5 h-5 text-[#2E6FF2]" />
+                    <div className="flex items-center justify-between mb-4">
+                      <div className="w-10 h-10 rounded-lg bg-black border border-white/10 flex items-center justify-center text-white">
+                        <IconComponent className="w-5 h-5 text-white/70" />
                       </div>
                       {isSelected && (
-                        <div className="w-5 h-5 rounded-full bg-[#2E6FF2] text-white flex items-center justify-center">
+                        <div className="w-5 h-5 rounded-full bg-white text-black flex items-center justify-center">
                           <Check className="w-3.5 h-3.5" />
                         </div>
                       )}
                     </div>
                     <div>
-                      <h4 className="font-bold text-sm text-[#08182d] mb-1">{item.title}</h4>
-                      <p className="text-xs text-[#08182d]/70 leading-relaxed">{item.desc}</p>
+                      <h4 className="font-bold text-base text-white mb-1.5">{item.title}</h4>
+                      <p className="text-xs text-white/50 leading-relaxed">{item.desc}</p>
                     </div>
                   </button>
                 );
               })}
             </div>
 
-            <div className="pt-4 flex justify-between">
+            <div className="pt-6 flex justify-between items-center border-t border-white/10">
               <button
                 type="button"
                 onClick={() => setStep(1)}
-                className="text-xs font-mono text-[#08182d]/70 hover:text-[#08182d] inline-flex items-center gap-1"
+                className="text-xs font-mono text-white/50 hover:text-white inline-flex items-center gap-1 transition-colors"
               >
                 <ArrowLeft className="w-3.5 h-3.5" /> Back
               </button>
@@ -295,13 +295,13 @@ export const ProjectCalculator: React.FC = () => {
             initial={{ opacity: 0, x: 15 }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: -15 }}
-            className="space-y-6"
+            className="space-y-8"
           >
             <div>
-              <h3 className="text-xl md:text-2xl font-bold text-[#08182d] mb-2">
+              <h3 className="text-2xl md:text-3xl font-bold text-white mb-3">
                 What is your target timeline?
               </h3>
-              <p className="text-sm text-[#08182d]/70">
+              <p className="text-sm md:text-base text-white/60">
                 Select your preferred deployment timeframe.
               </p>
             </div>
@@ -314,18 +314,18 @@ export const ProjectCalculator: React.FC = () => {
                     key={item.id}
                     type="button"
                     onClick={() => handleSelectTimeline(item.id)}
-                    className={`w-full text-left p-4 rounded-lg border transition-all flex items-center justify-between ${
+                    className={`w-full text-left p-5 rounded-xl border transition-all flex items-center justify-between ${
                       isSelected
-                        ? 'border-[#2E6FF2] bg-[#2E6FF2]/5 ring-1 ring-[#2E6FF2]'
-                        : 'border-[#E4E2DC] bg-[#FAF9F6] hover:border-[#08182d]/30'
+                        ? 'border-white bg-white/10 ring-1 ring-white/50'
+                        : 'border-white/10 bg-white/5 hover:border-white/30 hover:bg-white/10'
                     }`}
                   >
                     <div>
-                      <h4 className="font-bold text-sm text-[#08182d]">{item.label}</h4>
-                      <p className="text-xs text-[#08182d]/70">{item.desc}</p>
+                      <h4 className="font-bold text-base text-white mb-1">{item.label}</h4>
+                      <p className="text-xs text-white/50">{item.desc}</p>
                     </div>
                     {isSelected && (
-                      <div className="w-5 h-5 rounded-full bg-[#2E6FF2] text-white flex items-center justify-center shrink-0">
+                      <div className="w-5 h-5 rounded-full bg-white text-black flex items-center justify-center shrink-0">
                         <Check className="w-3.5 h-3.5" />
                       </div>
                     )}
@@ -334,11 +334,11 @@ export const ProjectCalculator: React.FC = () => {
               })}
             </div>
 
-            <div className="pt-4 flex justify-between">
+            <div className="pt-6 flex justify-between items-center border-t border-white/10">
               <button
                 type="button"
                 onClick={() => setStep(2)}
-                className="text-xs font-mono text-[#08182d]/70 hover:text-[#08182d] inline-flex items-center gap-1"
+                className="text-xs font-mono text-white/50 hover:text-white inline-flex items-center gap-1 transition-colors"
               >
                 <ArrowLeft className="w-3.5 h-3.5" /> Back
               </button>
@@ -358,21 +358,21 @@ export const ProjectCalculator: React.FC = () => {
             initial={{ opacity: 0, x: 15 }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: -15 }}
-            className="space-y-6"
+            className="space-y-8"
           >
             <div>
-              <h3 className="text-xl md:text-2xl font-bold text-[#08182d] mb-2">
+              <h3 className="text-2xl md:text-3xl font-bold text-white mb-3">
                 Where should we send the scope & quote?
               </h3>
-              <p className="text-sm text-[#08182d]/70">
+              <p className="text-sm md:text-base text-white/60">
                 Provide your details so our engineering team can review your specifications.
               </p>
             </div>
 
-            <form onSubmit={handleSubmit} className="space-y-4">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <form onSubmit={handleSubmit} className="space-y-5">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                 <div>
-                  <label className="block text-xs font-mono uppercase text-[#08182d]/70 mb-1">
+                  <label className="block text-xs font-mono uppercase text-white/50 mb-2">
                     Your Name *
                   </label>
                   <input
@@ -381,11 +381,11 @@ export const ProjectCalculator: React.FC = () => {
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                     placeholder="Jane Doe"
-                    className="w-full bg-[#FAF9F6] border border-[#E4E2DC] rounded px-3.5 py-2.5 text-sm focus:outline-none focus:border-[#2E6FF2]"
+                    className="w-full bg-[#151515] border border-white/10 rounded-lg px-4 py-3 text-sm text-white placeholder-white/20 focus:outline-none focus:border-[#2E6FF2] transition-colors"
                   />
                 </div>
                 <div>
-                  <label className="block text-xs font-mono uppercase text-[#08182d]/70 mb-1">
+                  <label className="block text-xs font-mono uppercase text-white/50 mb-2">
                     Work Email *
                   </label>
                   <input
@@ -394,13 +394,13 @@ export const ProjectCalculator: React.FC = () => {
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                     placeholder="jane@company.com"
-                    className="w-full bg-[#FAF9F6] border border-[#E4E2DC] rounded px-3.5 py-2.5 text-sm focus:outline-none focus:border-[#2E6FF2]"
+                    className="w-full bg-[#151515] border border-white/10 rounded-lg px-4 py-3 text-sm text-white placeholder-white/20 focus:outline-none focus:border-[#2E6FF2] transition-colors"
                   />
                 </div>
               </div>
 
               <div>
-                <label className="block text-xs font-mono uppercase text-[#08182d]/70 mb-1">
+                <label className="block text-xs font-mono uppercase text-white/50 mb-2">
                   Company / Organization (Optional)
                 </label>
                 <input
@@ -408,34 +408,34 @@ export const ProjectCalculator: React.FC = () => {
                   value={formData.company}
                   onChange={(e) => setFormData({ ...formData, company: e.target.value })}
                   placeholder="Acme Corp"
-                  className="w-full bg-[#FAF9F6] border border-[#E4E2DC] rounded px-3.5 py-2.5 text-sm focus:outline-none focus:border-[#2E6FF2]"
+                  className="w-full bg-[#151515] border border-white/10 rounded-lg px-4 py-3 text-sm text-white placeholder-white/20 focus:outline-none focus:border-[#2E6FF2] transition-colors"
                 />
               </div>
 
               <div>
-                <label className="block text-xs font-mono uppercase text-[#08182d]/70 mb-1">
+                <label className="block text-xs font-mono uppercase text-white/50 mb-2">
                   Brief Project Details
                 </label>
                 <textarea
-                  rows={3}
+                  rows={4}
                   value={formData.details}
                   onChange={(e) => setFormData({ ...formData, details: e.target.value })}
                   placeholder="Tell us any specific features, technical requirements, or goals..."
-                  className="w-full bg-[#FAF9F6] border border-[#E4E2DC] rounded px-3.5 py-2.5 text-sm focus:outline-none focus:border-[#2E6FF2] resize-none"
+                  className="w-full bg-[#151515] border border-white/10 rounded-lg px-4 py-3 text-sm text-white placeholder-white/20 focus:outline-none focus:border-[#2E6FF2] transition-colors resize-none"
                 />
               </div>
 
-              <div className="pt-2 flex justify-between items-center">
+              <div className="pt-6 flex justify-between items-center border-t border-white/10 mt-8">
                 <button
                   type="button"
                   onClick={() => setStep(3)}
-                  className="text-xs font-mono text-[#08182d]/70 hover:text-[#08182d] inline-flex items-center gap-1"
+                  className="text-xs font-mono text-white/50 hover:text-white inline-flex items-center gap-1 transition-colors"
                 >
                   <ArrowLeft className="w-3.5 h-3.5" /> Back
                 </button>
-                <SpecularButton size="lg" type="submit">
-                  Submit Project Scope
-                </SpecularButton>
+                <button type="submit" className="bg-white text-black px-6 py-3 rounded-lg font-medium hover:bg-white/90 transition-colors flex items-center justify-center gap-2">
+                  Submit Project Scope <ArrowRight className="w-4 h-4" />
+                </button>
               </div>
             </form>
           </motion.div>

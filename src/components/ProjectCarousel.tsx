@@ -36,7 +36,7 @@ export function ProjectCarousel({ projects }: ProjectCarouselProps) {
       {/* Desktop Navigation Buttons */}
       <button 
         onClick={scrollLeft}
-        className="hidden md:flex absolute -left-5 top-1/2 -translate-y-1/2 z-10 w-10 h-10 bg-white border border-[#E4E2DC] rounded-full items-center justify-center shadow-lg text-[#08182d] hover:bg-[#FAF9F6] transition-colors opacity-0 group-hover:opacity-100 disabled:opacity-0"
+        className="hidden md:flex absolute -left-5 top-1/2 -translate-y-1/2 z-10 w-10 h-10 bg-[#151515] border border-white/10 rounded-full items-center justify-center shadow-lg text-white hover:bg-white/10 transition-colors opacity-0 group-hover:opacity-100 disabled:opacity-0"
         aria-label="Scroll left"
       >
         <ChevronLeft className="w-5 h-5" />
@@ -44,7 +44,7 @@ export function ProjectCarousel({ projects }: ProjectCarouselProps) {
       
       <button 
         onClick={scrollRight}
-        className="hidden md:flex absolute -right-5 top-1/2 -translate-y-1/2 z-10 w-10 h-10 bg-white border border-[#E4E2DC] rounded-full items-center justify-center shadow-lg text-[#08182d] hover:bg-[#FAF9F6] transition-colors opacity-0 group-hover:opacity-100 disabled:opacity-0"
+        className="hidden md:flex absolute -right-5 top-1/2 -translate-y-1/2 z-10 w-10 h-10 bg-[#151515] border border-white/10 rounded-full items-center justify-center shadow-lg text-white hover:bg-white/10 transition-colors opacity-0 group-hover:opacity-100 disabled:opacity-0"
         aria-label="Scroll right"
       >
         <ChevronRight className="w-5 h-5" />
@@ -61,25 +61,25 @@ export function ProjectCarousel({ projects }: ProjectCarouselProps) {
           return (
             <div
               key={idx}
-              className="min-w-[85vw] md:min-w-[400px] flex-shrink-0 snap-center md:snap-start bg-white border border-[#E4E2DC] rounded-xl overflow-hidden shadow-sm hover:border-[#2E6FF2]/50 transition-all group/card flex flex-col justify-between"
+              className="min-w-[85vw] md:min-w-[400px] flex-shrink-0 snap-center md:snap-start bg-[#111] border border-white/10 rounded-2xl overflow-hidden shadow-2xl hover:border-white/30 transition-all group/card flex flex-col justify-between"
             >
               {/* Real Screenshot Preview Frame */}
-              <div className="bg-[#08182d] p-3 border-b border-[#E4E2DC] relative">
-                <div className="h-5 bg-[#0c223f] border border-white/10 rounded-t px-2 flex items-center justify-between">
-                  <div className="flex items-center gap-1">
-                    <span className="w-1.5 h-1.5 rounded-full bg-red-500/80 inline-block" />
-                    <span className="w-1.5 h-1.5 rounded-full bg-yellow-500/80 inline-block" />
-                    <span className="w-1.5 h-1.5 rounded-full bg-green-500/80 inline-block" />
+              <div className="bg-[#0A0A0A] p-4 border-b border-white/10 relative">
+                <div className="h-6 bg-[#151515] border border-white/10 rounded-t px-2.5 flex items-center justify-between">
+                  <div className="flex items-center gap-1.5">
+                    <span className="w-2 h-2 rounded-full bg-red-500/80 inline-block" />
+                    <span className="w-2 h-2 rounded-full bg-yellow-500/80 inline-block" />
+                    <span className="w-2 h-2 rounded-full bg-green-500/80 inline-block" />
                   </div>
-                  <span className="font-mono text-[8px] text-white/50 truncate max-w-[150px]">{project.url.replace('https://', '').replace('/', '')}</span>
-                  <span className="w-2" />
+                  <span className="font-mono text-[9px] text-white/30 truncate max-w-[150px]">{project.url.replace('https://', '').replace('/', '')}</span>
+                  <span className="w-4" />
                 </div>
                 <div className="relative w-full aspect-[16/10] overflow-hidden rounded-b border-x border-b border-white/10">
                   <Image
                     src={project.image}
                     alt={project.title}
                     fill
-                    className="object-cover object-top transition-transform duration-700 group-hover/card:scale-105"
+                    className="object-cover object-top opacity-80 group-hover/card:opacity-100 transition-all duration-700 group-hover/card:scale-105"
                     sizes="(max-width: 768px) 85vw, 400px"
                   />
                 </div>
@@ -87,17 +87,17 @@ export function ProjectCarousel({ projects }: ProjectCarouselProps) {
 
               <div className="p-6 md:p-8 flex-1 flex flex-col">
                 <div className="flex-1">
-                  <div className="flex items-center gap-2 mb-3">
-                    <div className="w-8 h-8 rounded-full bg-[#FAF9F6] border border-[#E4E2DC] flex items-center justify-center shrink-0">
-                      <IconComponent className="w-4 h-4 text-[#08182d]" />
+                  <div className="flex items-center gap-2 mb-4">
+                    <div className="w-8 h-8 rounded-lg bg-black border border-white/10 flex items-center justify-center shrink-0">
+                      <IconComponent className="w-4 h-4 text-white/70" />
                     </div>
-                    <span className="font-mono text-[10px] tracking-wider text-[#08182d]/60 uppercase truncate">
+                    <span className="font-mono text-[10px] tracking-wider text-white/50 uppercase truncate">
                       {project.category}
                     </span>
                   </div>
 
-                  <h3 className="text-xl font-bold text-[#08182d] mb-3">{project.title}</h3>
-                  <p className="text-sm text-[#08182d]/80 leading-relaxed mb-6">
+                  <h3 className="text-xl font-bold text-white mb-3">{project.title}</h3>
+                  <p className="text-sm text-white/60 leading-relaxed mb-6">
                     {project.desc}
                   </p>
                 </div>
@@ -107,7 +107,7 @@ export function ProjectCarousel({ projects }: ProjectCarouselProps) {
                     {project.tags.map((tag, i) => (
                       <span
                         key={i}
-                        className="font-mono text-[10px] bg-[#FAF9F6] border border-[#E4E2DC] px-2 py-0.5 rounded text-[#08182d]/70"
+                        className="font-mono text-[10px] bg-white/5 border border-white/10 px-2 py-0.5 rounded text-white/70"
                       >
                         {tag}
                       </span>
@@ -118,7 +118,7 @@ export function ProjectCarousel({ projects }: ProjectCarouselProps) {
                     href={project.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="pt-4 border-t border-[#E4E2DC] text-[#2E6FF2] font-semibold text-xs inline-flex w-full items-center justify-between group-hover/card:underline"
+                    className="pt-4 border-t border-white/10 text-[#2E6FF2] font-semibold text-xs inline-flex w-full items-center justify-between group-hover/card:text-white transition-colors"
                   >
                     <span>View Live Demo</span>
                     <ExternalLink className="w-3.5 h-3.5" />
@@ -132,7 +132,7 @@ export function ProjectCarousel({ projects }: ProjectCarouselProps) {
       
       {/* Mobile hint */}
       <div className="mt-2 text-center md:hidden">
-        <span className="text-[10px] uppercase font-mono tracking-widest text-[#08182d]/40">← Swipe to explore →</span>
+        <span className="text-[10px] uppercase font-mono tracking-widest text-white/30">← Swipe to explore →</span>
       </div>
     </div>
   );
